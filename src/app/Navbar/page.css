@@ -1,0 +1,271 @@
+/* Navbar.module.css */
+
+/* General Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Mobile Menu Button */
+.menuButton {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: block;
+}
+
+/* Navigation Styles */
+.nav {
+  position: absolute;
+  top: 60px;
+  left: -100%;
+  width: 75%;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: left 0.3s ease-in-out;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.navOpen {
+  left: 0;
+}
+
+/* Navigation List */
+.navList {
+  list-style: none;
+  padding: 0 ;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.navList li {
+  margin: 10px 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+  transition: color 0.3s;
+}
+
+.navLink:hover {
+  color: #5B65F5;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdownButton {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownButton:hover {
+  color: #5B65F5;
+}
+.logo {
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: -120px;
+  
+}
+.logos{
+  margin-right: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+/* Show dropdown on hover (for larger screens) */
+@media (min-width: 768px) {
+  .dropdown:hover .dropdownMenu {
+    display: block;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  width: 180px;
+  display: none;
+}
+
+.dropdownItem {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+}
+
+.dropdownItem:hover {
+  background-color: #f5f5f5;
+}
+.dropdown, .dropdownMenu, .dropdownItem, .dropdownButton {
+  font-family: inherit; 
+}
+
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .menuButton {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    flex-direction: row;
+  }
+
+  .navList {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .navList li {
+    margin: 0;
+  }
+
+  .dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+  }
+}
+
+/* Additional Breakpoints for Larger Screens */
+@media (min-width: 1024px) {
+  .header {
+    padding: 0px 65px;
+  }
+
+  .navList {
+    padding: 10px 130px;
+    gap: 35px;
+  }
+}
+
+
+/* Mobile View Fixes */
+@media (max-width: 767px) {
+  .nav {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease-in-out;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    z-index: 1000;
+  }
+
+  .navOpen {
+    top: 0;
+   margin-top: 120px;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .menuButton {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    z-index: 1100;
+    margin-right: 100px;
+  }
+  .dropdown {
+    
+    width: 100%;
+  }
+
+  /* Hide dropdown menu initially */
+  .dropdownMenu {
+    display: none;
+    position: static; /* Change from absolute to static so it stays in flow */
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    box-shadow: none;
+  }
+
+  /* Show dropdown menu when active */
+  .dropdown.active .dropdownMenu {
+    display: block;
+  }
+
+  .dropdownButton {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .navList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 3px;
+  }
+
+  .navLink {
+    width: 100%;
+    padding: 10px 15px;
+  }
+}
+

@@ -1,0 +1,121 @@
+
+
+.footer{
+    
+    background-color: #1d2135;
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+.contactSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+.card{
+    flex: 1;
+    padding: 10px;
+    max-width: 300px;
+}
+.icon{
+    font-size: 25px;
+    color: #0099ff;
+    margin-bottom: 10px;
+}
+.divider{
+    width: 2px;
+    height: 100px;
+    background-color: rgb(145, 145, 145);
+}
+.am{
+    color: white;
+    text-decoration: none;
+}
+.am:hover{
+    text-decoration: underline;
+}
+.socialMedia{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.socialMedia a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+}
+
+/* Social Media Actual Color */
+.socialMedia a:nth-child(1){background-color: #1877F2;}
+.socialMedia a:nth-child(2){background-color: #E4405f;}
+.socialMedia a:nth-child(3){background-color: #0077B5;}
+.socialMedia a:nth-child(4){background-color: #000000;}
+
+.socialMedia a svg {
+    color: white;
+}
+.socialMedia a:hover{
+    transform: scale(1.1);
+}
+.copyright{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+/* Responsive Code----|>  */
+@media (max-width: 768px) {
+    .contactSection {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .divider {
+        display: none;
+    }
+    .card {
+        max-width: 100%;
+    }
+    .socialMedia {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .socialMedia a {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 20px 10px;
+        width: 100vw;
+    }
+    .contactSection {
+        gap: 5px;
+    }
+    .card {
+        padding: 5px;
+    }
+    .icon {
+        font-size: 20px;
+    }
+    .socialMedia a {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+    }
+    .copyright {
+        font-size: 12px;
+    }
+}

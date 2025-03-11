@@ -1,0 +1,307 @@
+.aboutContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.aboutContainer1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    margin-bottom: 30px;
+}
+
+/* Left Side Text */
+.textContainer {
+    margin-top: 80px;
+    flex: 1;
+    padding-right: 50px;
+    text-align: justify;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: all 1s ease-out;
+}
+
+.textContainer1 {
+    margin-top: -90px;
+    text-align: justify;
+    flex: 1;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-out;
+}
+
+.textContainer1 h2 {
+    font-size: 20px;
+}
+
+.textContainer h3 {
+    font-size: 18px;
+    color: #4ea8ff;
+    font-weight: bold;
+}
+
+.textContainer h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.textContainer p,
+.textContainer1 p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Right Side Image */
+.imageContainer {
+    margin-top: 90px;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1s ease-out;
+}
+
+.changeimg {
+    border-radius: 10px;
+}
+
+/* Vision & Mission Sections */
+.visionContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #fefefe8a;
+    padding: 40px;
+    gap: 20px;
+}
+
+.visionText,
+.missionText {
+    width: 48%;
+    padding: 20px;
+}
+
+.visionText h2,
+.missionText h2 {
+    color: #4ea8ff;
+    font-size: 18px;
+}
+
+h1 {
+    color: #222;
+    font-size: 36px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Mission Section Animation */
+.missionText {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.missionText p {
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Values Section */
+.valuesContainer {
+    background: url('/bgi.jpg') center/cover no-repeat;
+    position: relative;
+    padding: 80px;
+    color: white;
+}
+
+.valuesContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.valuesText {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: auto;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 1s ease-out;
+}
+
+.valuesText h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    color: white;
+}
+
+.valuesText ul {
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.valuesText ul li {
+    color: white;
+}
+
+.valuesText ul:first-of-type {
+    float: left;
+    width: 45%;
+    text-align: left;
+}
+
+.valuesText ul:last-of-type {
+    float: right;
+    width: 45%;
+    text-align: left;
+}
+
+.valuesContainer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Animation Activation */
+.animate .textContainer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate .textContainer1 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate .imageContainer {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate .missionText {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate .valuesText {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .aboutContainer,
+    .aboutContainer1 {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    .textContainer,
+    .textContainer1 {
+        padding-right: 0;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .imageContainer {
+        margin-top: 30px;
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .visionContainer {
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .visionText,
+    .missionText {
+        width: 100%;
+        text-align: center;
+    }
+
+    .textContainer1 h2 {
+        font-size: 18px;
+    }
+
+    .textContainer h1 {
+        font-size: 28px;
+    }
+
+    .textContainer p,
+    .textContainer1 p {
+        font-size: 16px;
+    }
+
+    .imageContainer {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutContainer,
+    .aboutContainer1 {
+        padding: 20px;
+    }
+
+    .textContainer h1 {
+        font-size: 24px;
+    }
+
+    .textContainer p,
+    .textContainer1 p {
+        font-size: 14px;
+    }
+
+    .visionContainer {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    ul {
+        padding-left: 10px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+}

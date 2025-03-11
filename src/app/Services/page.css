@@ -1,0 +1,163 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin-top: 80px;
+  }
+  
+  .textSection {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+  }
+  .textSection p {
+    font-size: 18px;
+    color: gray;
+    line-height: 1.8;
+  }
+  .textSection li {
+    font-size: 18px;
+    color: gray;
+    line-height: 1.8;
+  }
+  .textSection h3{
+    color: #4ea8ff;
+  }
+  .textSection.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .imageSection {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s ease-in-out;
+  }
+  
+  .imageSection.show {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+  .animatedImage {
+    margin-top: -50px;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+
+
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+      text-align: center;
+      padding: 30px;
+    }
+  
+    .textSection {
+      transform: translateY(30px);
+    }
+  
+    .imageSection {
+      transform: translateX(30px);
+    }
+  
+    .imageSection img {
+      width: 80%; /* Adjust image size for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .textSection {
+      transform: translateY(20px);
+    }
+  
+    .imageSection {
+      transform: translateX(20px);
+    }
+  
+    .imageSection img {
+      width: 100%; /* Adjust for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .textSection {
+        margin-top: 70px;
+      transform: translateY(10px);
+    }
+  
+    .imageSection {
+      transform: translateX(10px);
+    }
+  
+    .imageSection img {
+      width: 100%; /* Full width for mobile */
+    }
+  }
+  
+
+
+ /* Helps Banner */
+.helpsbanner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url('/backteams.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Hide animation initially */
+  .helpbanner {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  
+  /* Show animation when in viewport */
+  .helpbanner.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .helpbanner h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .helpbanner h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Styling */
+  .helpbannerbutton {
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .helpbannerbutton:hover {
+    background-color: #0056b3;
+  }
+  

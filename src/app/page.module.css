@@ -1,168 +1,865 @@
+/* Base styles for .page and .carousel */
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  margin: 0;
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+}
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
+/* Ensure image takes full screen */
+.imageContainer {
+  position: absolute;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.imageContainer.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Wrapper for Next.js Image component */
+.imageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Text Overlay */
+.textOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 800px;
+}
+
+/* Heading and Description */
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  opacity: 0;
+  margin: 0;
+}
+
+.description {
+  font-size: 1.5rem;
+  opacity: 0;
+  margin: 10px 0 0;
+}
+
+/* Animation Keyframes */
+@keyframes slideDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-.main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
+/* Ensure animations restart every slide */
+.imageContainer.active .heading {
+  animation: slideDown 1s ease-in-out forwards;
 }
 
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
+.imageContainer.active .description {
+  animation: slideUp 1s ease-in-out forwards 0.5s;
 }
 
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
+/* Left & Right Buttons */
+.leftButton,
+.rightButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  padding: 10px;
   cursor: pointer;
+  z-index: 2;
+  display: block;
+}
+
+.leftButton {
+  left: 20px;
+}
+
+.rightButton {
+  right: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .heading {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .leftButton,
+  .rightButton {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .leftButton,
+  .rightButton {
+    padding: 6px;
+  }
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .leftButton,
+  .rightButton {
+    padding: 5px;
+    font-size: 0.8rem;
+  }
+
+  .textOverlay {
+    width: 95%; /* Increase width for smaller screens */
+  }
+}
+
+@media (max-width: 400px) {
+  .page{
+    
+  }
+  .heading {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+  }
+
+  .leftButton,
+  .rightButton {
+    padding: 4px;
+    font-size: 0.7rem;
+  }
+
+  .textOverlay {
+    width: 100%;
+  }
+}
+
+
+
+
+
+/* About Us Section */
+.aboutSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: #f8f9fa;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+/* Content */
+.aboutSection .content {
+    max-width: 50%;
+}
+
+/* Heading & Description */
+.aboutSection .subheading {
+    color: #4ea8ff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.aboutSection .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: black;
+    opacity: 1;
+}
+
+.aboutSection .description {
+    font-size: 1.2rem;
+    color: black;
+    text-decoration: none;
+    line-height: 1.6;
+    opacity: 1;
+}
+
+.aboutSection .learnMore {
+    color: #4ea8ff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Image Container */
+.aboutSection .images {
+    position: relative;
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Initially hide images and apply animation */
+.aboutSection .image1,
+.aboutSection .image2,
+.aboutSection .image3,
+.aboutSection .image4 {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0; 
+    transform: translateY(30px);
+    transition: all 1s ease-in-out;
+}
+
+/* Add animations when the section is in view */
+.aboutSection.inView .image1 {
+    opacity: 1;
+    transform: translateX(-50px); /* Slide from left */
+}
+
+.aboutSection.inView .image2 {
+    opacity: 1;
+    transform: translateX(50px); /* Slide from right */
+}
+
+.aboutSection.inView .image3 {
+    opacity: 1;
+    transform: translateX(-50px ); /* Slide from top */
+}
+
+.aboutSection.inView .image4 {
+    opacity: 1;
+    transform: translateX(50px); /* Slide from bottom */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .aboutSection {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px;
+    }
+
+    .aboutSection .content {
+        max-width: 80%;
+    }
+
+    .aboutSection .images {
+        width: 80%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aboutSection {
+        padding: 30px;
+    }
+
+    .aboutSection .content {
+        max-width: 100%;
+    }
+
+    .aboutSection .heading {
+        font-size: 2rem;
+    }
+
+    .aboutSection .description {
+        font-size: 1rem;
+    }
+
+    .aboutSection .images {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .aboutSection {
+        width: 100vw;
+        
+    }
+
+    .aboutSection .heading {
+        font-size: 1.8rem;
+    }
+
+    .aboutSection .description {
+        font-size: 0.9rem;
+    }
+
+    .aboutSection .images {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .aboutSection .image1,
+    .aboutSection .image2,
+    .aboutSection .image3,
+    .aboutSection .image4 {
+        width: 70%;
+    }
+}
+
+
+
+/* Cards */
+/* Base styles */
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #08054a;
+}
+
+.tests {
+    text-align: center;
+    width: 100%;
+}
+
+.tests h1 {
+    font-size: 2.5em;
+    color: black;
+    margin-top: -20px;
+}
+
+.tests p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4ea8ff;
+}
+
+.card {
+    background-color: rgb(9, 9, 93);
+    color: white;
+    border-radius: 8px;
+    padding: 20px 40px 30px 50px;
+    width: 22%;
+    height: 300px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.card:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.emoji {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    z-index: 2;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translate(25%, 25%);
+}
+
+.card:hover::after {
+    background-color: rgb(12, 209, 223);
+}
+
+.cardsRow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.imageRow {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .card {
+        width: 30%;
+    }
+}
+
+@media (max-width: 992px) {
+    .card {
+        width: 45%;
+    }
+
+    .cardsRow {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 70%;
+    }
+
+    .tests h1 {
+        font-size: 2em;
+    }
+
+    .tests p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        width: 90%;
+        height: 50%;
+        padding: 20px;
+    }
+
+    .tests h1 {
+        font-size: 1.8em;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-left: 40px;
+    }
+
+    .tests p {
+        font-size: 1em;
+    }
+
+    .cardsRow {
+        gap: 20px;
+    }
+
+    .imageRow {
+        gap: 10px;
+        display: block;
+    }
+    .cardsContainer{
+        width: 100%;
+    }
+}
+  
+ 
+/* Service & Recruitment Source---> CSS */
+/* General Styles */
+.servicescontainer {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.servicesubtitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #4ea8ff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.servicetitle {
+  font-size: 2rem;
+  color: #222;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* Grid Layout */
+.servicegrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  row-gap: 60px;
+  justify-content: center;
+}
+
+/* Service Card */
+.servicecard {
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: inset 0 0 0 0 #9eeef0; /* Shadow andar ki taraf */
+  text-decoration: none;
+  color: #333;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+  border: 4px solid transparent; /* Pehle transparent border */
+}
+
+.servicecard:hover {
+  box-shadow: inset 0 0 15px rgba(91, 101, 245, 0.4); /* shadow Andar ke tarf*/
+  border-color: #9eeef0; /* Hover par border color */
+}
+
+/* Corner Effect */
+.servicecard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 15%;
+  /* background: #5B65F5; */
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.servicecard::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15%;
+  height: 15%;
+  /* background: #5B65F5; */
+  transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.servicecard:hover::before,
+.servicecard:hover::after {
+  width: 25%;
+  height: 30%;
+  background: #9eeef0;
+}
+
+/* Icon Styling */
+.iconwrapper {
+  background: #f5f5f5;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  margin: 0 auto 15px;
+  transition: background 0.3s ease-in-out;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.servicecard:hover .iconwrapper {
+  background: #9eeef0;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 180px;
+.serviceicon {
+  font-size: 2rem;
+  color: #5B65F5;
+  transition: color 0.3s ease-in-out;
 }
 
-.footer {
-  grid-row-start: 3;
+.servicecard:hover .serviceicon {
+  color: #fff;
+}
+
+/* Service Name */
+.servicename {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .servicegrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .servicetitle {
+    font-size: 1.8rem;
+  }
+
+  .servicegrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .servicecard {
+    padding: 20px;
+  }
+
+  .iconwrapper {
+    width: 60px;
+    height: 60px;
+  }
+
+  .serviceicon {
+    font-size: 1.8rem;
+  }
+}
+
+/* Recruitment start */
+/* Background Styling */
+.recruitmentcontainer {
+  
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  background: url("/backteams.jpg") no-repeat center center/cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Black Overlay */
+  z-index: 1;
+}
+
+/* Text Styling */
+.recruitmentsubtitle {
+  position: relative;
+  font-size: 1.2rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  z-index: 2;
+}
+
+.recruitmenttitle {
+  position: relative;
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 40px;
+  z-index: 2;
+}
+
+/* Grid Layout */
+.recruitmentgrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Service Card */
+.recruitmentcard {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  text-align: center;
+  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+  text-decoration: none;
+  color: #5B65F5;
   display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
+}
+.recruitmentname{
+  color: white;
 }
 
-.footer img {
-  flex-shrink: 0;
+.recruitmentcard:hover {
+  background: #9eeef0;
+  border-color: #9eeef0;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+/* Icon Styling */
+.iconwrapper {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+/* Service Name */
+.recruitmentname {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .recruitmentgrid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+@media (max-width: 768px) {
+  .recruitmentcontainer{
+    width: 100%;
+    margin-left: 18px;
+  }
+  .recruitmentgrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
+
+/* Consultation styling */
+.consultationcontainer{
+  position: relative;
+  text-align: center;
+  padding: 60px 20px;
+  background: url("/contactbg.png") no-repeat center center/cover;
+
+}
+.consultationcontainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(151, 137, 137, 0.589); /* Dark overlay */
+  z-index: 1;
+}
+.consultationsubtitle,
+.consultationtitle {
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+.consultationsubtitle{
+  font-weight: bold;
+  color: #4ea8ff;
+}
+.consultationbutton{
+  position: relative;
+  z-index: 2;
+}
+.consultationbutton {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #1971c2;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.consultationbutton:hover {
+  background-color: #4ecaff;
+}
+
+/* Responsive Code For Consultation */
+@media (max-width: 768px) {
+  .consultationcontainer {
+    padding: 40px 15px;
   }
 
-  .main {
-    align-items: center;
+  .consultationsubtitle {
+    font-size: 18px;
   }
 
-  .main ol {
-    text-align: center;
+  .consultationtitle {
+    font-size: 24px;
   }
 
-  .ctas {
-    flex-direction: column;
+  .consultationbutton {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultationcontainer {
+    width: 100vw;
+    padding: 30px 10px;
   }
 
-  .ctas a {
+  .consultationsubtitle {
+    font-size: 16px;
+  }
+
+  .consultationtitle {
+    font-size: 20px;
+  }
+
+  .consultationbutton {
     font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
-  }
-
-  a.secondary {
-    min-width: auto;
-  }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+    padding: 8px 16px;
   }
 }
