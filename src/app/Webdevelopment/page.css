@@ -106,7 +106,6 @@
     height: 0;
     border-left: 30px solid transparent;
     border-top: 30px solid transparent;
-    
     opacity: 0;
   }
   
@@ -132,3 +131,214 @@
   .serviceTitle:hover {
     color: #4ea8ff;
   }
+
+
+  /* Responsive Styles */
+@media (max-width: 1024px) {
+    .containerk {
+      flex-direction: column;
+      text-align: center;
+      height: auto;
+      padding: 5% 5%;
+    }
+  
+    .textSectionk,
+    .imageSectionb {
+      max-width: 80%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .headingb {
+      font-size: 28px;
+    }
+  
+    .contentb {
+      font-size: 16px;
+    }
+  
+    .servicesContainer {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      padding: 30px 5%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .textSectionk,
+    .imageSectionb {
+      max-width: 100%;
+    }
+  
+    .servicesContainer {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 20px 5%;
+    }
+  
+    .serviceCard {
+      padding: 15px;
+    }
+  
+    .serviceTitle {
+      font-size: 16px;
+    }
+  
+    .serviceIcon {
+      font-size: 30px;
+    }
+  }
+
+  
+
+  .containerr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    background: black;
+    padding: 50px;
+  }
+  
+  .leftSectionr {
+    flex: 1;
+    color: white;
+    padding-left: 50px;
+  }
+  
+  .subHeadingr {
+    color: #8a8aff;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .headingr {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  .textAnimationr span {
+    opacity: 0;
+    transform: translateY(20px);
+    display: inline-block;
+    animation: fadeInUp 0.5s forwards;
+  }
+  
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .cardsContainerr {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .cardr {
+    background: #2196F3;
+    color: white;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    box-shadow: inset 0 0 0px rgba(255, 255, 255, 0);
+  }
+  
+  .cardr:hover {
+    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+  
+  .arrowr {
+    font-size: 24px;
+    color: white;
+  }
+
+  /* Responsive Code */
+
+@media (max-width: 1024px) {
+  .containerr {
+    flex-direction: column;
+    height: auto;
+    padding: 30px;
+  }
+
+  .leftSectionr {
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .headingr {
+    font-size: 32px;
+  }
+
+  .cardsContainerr {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cardr {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftSectionr {
+    padding-left: 10px;
+    text-align: center;
+  }
+
+  .headingr {
+    font-size: 28px;
+  }
+
+  .subHeadingr {
+    font-size: 12px;
+  }
+
+  .cardsContainerr {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardr {
+    width: 80%;
+  }
+
+  .arrowr {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerr {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .headingr {
+    font-size: 24px;
+  }
+
+  .cardr {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+}

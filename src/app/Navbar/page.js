@@ -40,9 +40,9 @@ const Navbar = () => {
                             <li><Link href="/Hr" className="dropdownItem">Hr Services</Link></li>
                             <li><Link href="/Webdevelopment" className="dropdownItem">Web Design & Development</Link></li>
                             <li><Link href="/awards" className="dropdownItem">Web Graphic Design</Link></li>
-                            <li><Link href="/seo" className="dropdownItem">SEO Service</Link></li>
-                            <li><Link href="/content" className="dropdownItem">Content Marketing</Link></li>
-                            <li><Link href="/webanalytics" className="dropdownItem">Web Analytics</Link></li>
+                            <li><Link href="/Seo" className="dropdownItem">SEO Service</Link></li>
+                            <li><Link href="/Content" className="dropdownItem">Content Marketing</Link></li>
+                            <li><Link href="/Analytics" className="dropdownItem">Web Analytics</Link></li>
                         </ul>
                     </li>
 

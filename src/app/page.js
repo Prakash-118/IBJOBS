@@ -86,12 +86,12 @@ export default function Home() {
 
   //For Services 
   const services = [
-    { name: 'Permanent Staffing', icon: faUsers, link: '/services/permanent-staffing' },
-    { name: 'Contract Staffing', icon: faBriefcase, link: '/services/contract-staffing' },
-    { name: 'Website Development', icon: faCode, link: '/services/website-development' },
-    { name: 'Executive Search', icon: faSearch, link: '/services/executive-search' },
-    { name: 'HR Services', icon: faUserTie, link: '/services/hr-services' },
-    { name: 'SEO/SMO', icon: faChartLine, link: '/services/seo-smo' },
+    { name: 'Permanent Staffing', icon: faUsers, link: '/Services' },
+    { name: 'Contract Staffing', icon: faBriefcase, link: '/Contract' },
+    { name: 'Website Development', icon: faCode, link: '/Webdevelopment' },
+    { name: 'Executive Search', icon: faSearch, link: '/Executive' },
+    { name: 'HR Services', icon: faUserTie, link: '/Hr' },
+    { name: 'SEO/SMO', icon: faChartLine, link: '/Seo' },
   ];
 
   const recruitmentSource = [

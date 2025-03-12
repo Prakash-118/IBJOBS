@@ -10,10 +10,19 @@ import { faCode, faShoppingCart, faPalette, faLaptopCode, faGolfBall, faPencilRu
 const Page = () => {
     const [animate, setAnimate] = useState(false);
   const [hover, setHover] = useState(false);
+  const [text, setText] = useState("");
+  const fullText = "We Organize Our Production Process".split(" ");
 
   useEffect(() => {
     setAnimate(true);
-  }, []);
+    let index = 0;
+    const interval = setInterval(() => {
+      setText((prev) => prev + " " + fullText[index]);
+      index++;
+      if (index === fullText.length) clearInterval(interval);
+    }, 300);
+    return () => clearInterval(interval);
+  }, [fullText]);
 
 
 
@@ -46,7 +55,7 @@ const Page = () => {
       </div>
     </div> 
 
-
+{/* Card Section */}
     <div className="servicesContainer">
         {services.map((service, index) => (
           <div key={index} className="serviceCard">
@@ -56,6 +65,30 @@ const Page = () => {
         ))}
       </div>
     
+        
+{/* new card */}
+      <div className="containerr">
+      <div className="leftSectionr">
+        <p className="subHeadingr">TECHNOLOGY INDEX</p>
+        <h1 className="headingr">
+          {fullText.map((word, index) => (
+            <span key={index} className="textAnimationr" style={{ animationDelay: `${index * 0.3}s` }}>
+              {word}
+            </span>
+          ))}
+        </h1>
+        <div className="cardsContainerr">
+          <div className="cardr">ANALYSIS</div>
+          <div className="arrowr">➜</div>
+          <div className="cardr">DESIGN</div>
+          <div className="arrowr">➜</div>
+          <div className="cardr">DEVELOP</div>
+          <div className="arrowr">➜</div>
+          <div className="cardr">TESTING</div>
+        </div>
+      </div>
+      </div>
+
     </>
   )
 }
