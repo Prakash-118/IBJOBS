@@ -8,7 +8,6 @@ import { useInView } from "react-intersection-observer";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faBriefcase, faCode, faSearch, faUserTie, faChartLine, faDatabase, faVolumeUp, faGlobe, faUser, faCopy, faUserLock, faUsersCog, } from '@fortawesome/free-solid-svg-icons';
 import { FaUsers, FaSearchLocation, FaClipboardList, FaUserCheck, FaFileAlt, FaBriefcase } from "react-icons/fa";
-
 import Link from 'next/link';
 
 
@@ -253,7 +252,7 @@ export default function Home() {
       </div>
     </div>
 {/* Features End */}
- 
+   
  {/* Service Start */}
  
  <div className={styles.servicescontainer}>
