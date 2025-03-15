@@ -1,5 +1,3 @@
-/* Navbar.module.css */
-
 /* General Styles */
 .header {
   position: fixed;
@@ -13,6 +11,11 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+}
+
+/* Active Page Underline */
+.navLink.active {
+  border-bottom: 2px solid #0ae4e4;
 }
 
 /* Mobile Menu Button */
@@ -47,15 +50,15 @@
 /* Navigation List */
 .navList {
   list-style: none;
-  padding: 0 ;
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px; /* Reduced gap */
 }
 
 .navList li {
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .navLink {
@@ -79,31 +82,34 @@
 .dropdownButton {
   background: none;
   border: none;
-  font-size: 1rem;
+  font-size: 0.91rem;
   font-weight: bold;
   color: #333;
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-top: 1px;
 }
 
 .dropdownButton:hover {
   color: #5B65F5;
 }
+
 .logo {
   width: auto;
   height: auto;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: -120px;
-  
+  margin-left: -150px; /* Adjusted for more left alignment */
 }
-.logos{
+
+.logos {
   margin-right: 10px;
   margin-top: 20px;
   cursor: pointer;
 }
+
 /* Show dropdown on hover (for larger screens) */
 @media (min-width: 768px) {
   .dropdown:hover .dropdownMenu {
@@ -118,13 +124,13 @@
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   list-style: none;
-  padding: 10px 0;
+  padding: 5px 0; /* Reduced padding */
   width: 180px;
   display: none;
 }
 
 .dropdownItem {
-  padding: 10px 20px;
+  padding: 8px 15px; /* Adjusted padding */
   font-size: 1rem;
   color: #333;
   text-decoration: none;
@@ -134,9 +140,6 @@
 
 .dropdownItem:hover {
   background-color: #f5f5f5;
-}
-.dropdown, .dropdownMenu, .dropdownItem, .dropdownButton {
-  font-family: inherit; 
 }
 
 /* Responsive Styles */
@@ -175,7 +178,7 @@
   }
 }
 
-/* Additional Breakpoints for Larger Screens */
+/* Adjust dropdown positions */
 @media (min-width: 1024px) {
   .header {
     padding: 0px 65px;
@@ -183,89 +186,10 @@
 
   .navList {
     padding: 10px 130px;
-    gap: 35px;
-  }
-}
-
-
-/* Mobile View Fixes */
-@media (max-width: 767px) {
-  .nav {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: white;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-    transition: top 0.3s ease-in-out;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    z-index: 1000;
+    gap: 25px; /* Adjusted gap */
   }
 
-  .navOpen {
-    top: 0;
-   margin-top: 120px;
-  }
-
-  body.menu-open {
-    overflow: hidden;
-  }
-
-  .menuButton {
-    font-size: 2rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: block;
-    z-index: 1100;
-    margin-right: 100px;
-  }
-  .dropdown {
-    
-    width: 100%;
-  }
-
-  /* Hide dropdown menu initially */
   .dropdownMenu {
-    display: none;
-    position: static; /* Change from absolute to static so it stays in flow */
-    width: 100%;
-    background: white;
-    padding: 10px 0;
-    box-shadow: none;
-  }
-
-  /* Show dropdown menu when active */
-  .dropdown.active .dropdownMenu {
-    display: block;
-  }
-
-  .dropdownButton {
-    width: 100%;
-    text-align: left;
-    padding: 10px;
-    background: none;
-    border: none;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .navList {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    gap: 3px;
-  }
-
-  .navLink {
-    width: 100%;
-    padding: 10px 15px;
+    margin-top: 2px; /* Adjusted for dropdown alignment */
   }
 }
-

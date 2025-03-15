@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 import './page.css';
 import Image from 'next/image';
@@ -9,11 +10,21 @@ import Image from 'next/image';
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(null);
+    const pathname = usePathname();
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
     const toggleDropdown = (index) => {
         setDropdownOpen(dropdownOpen === index ? null : index);
     };
+
+    const closeMenu = () => {
+        setMenuOpen(false);
+        setDropdownOpen(null);
+    };
+
+    useEffect(() => {
+        closeMenu(); // Close menu on route change
+    }, [pathname]);
 
     return (
         <header className="header">
@@ -25,8 +36,8 @@ const Navbar = () => {
 
             <nav className={menuOpen ? "nav navOpen" : "nav"}>
                 <ul className="navList">
-                    <li><Link href="/" className="navLink">Home</Link></li>
-                    <li><Link href="/About" className="navLink">About Us</Link></li>
+                    <li><Link href="/" className={`navLink ${pathname === '/' ? 'active' : ''}`}>Home</Link></li>
+                    <li><Link href="/About" className={`navLink ${pathname === '/About' ? 'active' : ''}`}>About Us</Link></li>
 
                     {/* Our Services Dropdown */}
                     <li className={`dropdown ${dropdownOpen === 1 ? "active" : ""}`}>
@@ -36,8 +47,8 @@ const Navbar = () => {
                         <ul className="dropdownMenu">
                             <li><Link href="/Services" className="dropdownItem">Permanent Staffing</Link></li>
                             <li><Link href="/Contract" className="dropdownItem">Contract Staffing</Link></li>
-                            <li><Link href="/Executive" className="dropdownItem">Excutive Search</Link></li>
-                            <li><Link href="/Hr" className="dropdownItem">Hr Services</Link></li>
+                            <li><Link href="/Executive" className="dropdownItem">Executive Search</Link></li>
+                            <li><Link href="/Hr" className="dropdownItem">HR Services</Link></li>
                             <li><Link href="/Webdevelopment" className="dropdownItem">Web Design & Development</Link></li>
                             <li><Link href="/Graphic" className="dropdownItem">Web Graphic Design</Link></li>
                             <li><Link href="/Seo" className="dropdownItem">SEO Service</Link></li>
@@ -53,7 +64,6 @@ const Navbar = () => {
                         </button>
                         <ul className="dropdownMenu">
                             <li><Link href="/Jobspost" className="dropdownItem">Jobs</Link></li>
-                            <li><Link href="/best-jobs" className="dropdownItem">Login/Register</Link></li>
                             <li><Link href="/work-awards" className="dropdownItem">Resume</Link></li>
                         </ul>
                     </li>
@@ -69,8 +79,8 @@ const Navbar = () => {
                         </ul>
                     </li>
 
-                    <li><Link href="/Contact" className="navLink">Contact Us</Link></li>
-                    <li><Link href="/login" className="navLink">Login</Link></li>
+                    <li><Link href="/Contact" className={`navLink ${pathname === '/Contact' ? 'active' : ''}`}>Contact Us</Link></li>
+                    <li><Link href="/login" className={`navLink ${pathname === '/login' ? 'active' : ''}`}>Login</Link></li>
                 </ul>
             </nav>
         </header>

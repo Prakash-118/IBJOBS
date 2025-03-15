@@ -16,6 +16,11 @@ body{
     gap: 15px;
     justify-content: center;
     margin-bottom: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
 .search-bar input{
     padding: 15px;
@@ -48,7 +53,7 @@ body{
     box-shadow: 0px 4px 6px rgba(255, 0.5, 0, 0.2);
     transition: transform 0.3s;
     text-align: center;
-}                                                                   
+}                                                                    
 .job-card:hover{
     transform: scale(1.05);
 }
@@ -100,6 +105,30 @@ body{
   .email-subscribe {
     margin-top: 20px;
     text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .subscribe-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 1s forwards;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   
   .email-subscribe input {
@@ -117,9 +146,9 @@ body{
     cursor: pointer;
     border-radius: 5px;
     transition: 0.3s;
+    margin-left: 10px;
   }
   
   .email-subscribe button:hover {
     background-color: darkgreen;
   }
-  
