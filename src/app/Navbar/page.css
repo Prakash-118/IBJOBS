@@ -25,6 +25,7 @@
   border: none;
   cursor: pointer;
   display: block;
+  margin-right: 70px;
 }
 
 /* Navigation Styles */
@@ -101,7 +102,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  margin-left: -150px; /* Adjusted for more left alignment */
+  margin-left: -170px; /* Adjusted for more left alignment */
 }
 
 .logos {
@@ -146,6 +147,7 @@
 @media (min-width: 768px) {
   .menuButton {
     display: none;
+    
   }
 
   .nav {
@@ -178,6 +180,7 @@
   }
 }
 
+
 /* Adjust dropdown positions */
 @media (min-width: 1024px) {
   .header {
@@ -187,9 +190,5 @@
   .navList {
     padding: 10px 130px;
     gap: 25px; /* Adjusted gap */
-  }
-
-  .dropdownMenu {
-    margin-top: 2px; /* Adjusted for dropdown alignment */
   }
 }

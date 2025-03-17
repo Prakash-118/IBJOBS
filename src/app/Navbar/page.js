@@ -23,8 +23,9 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        closeMenu(); // Close menu on route change
+        closeMenu(); // Close menu on route change 
     }, [pathname]);
+
 
     return (
         <header className="header">
@@ -38,6 +39,10 @@ const Navbar = () => {
                 <ul className="navList">
                     <li><Link href="/" className={`navLink ${pathname === '/' ? 'active' : ''}`}>Home</Link></li>
                     <li><Link href="/About" className={`navLink ${pathname === '/About' ? 'active' : ''}`}>About Us</Link></li>
+                     {/* Job Seeker Dropdown */}
+                     <li><Link href="/Jobspost" className={`navLink ${pathname === '/Jobspost' ? 'active' : ''}`}>Job Post</Link></li>
+
+
 
                     {/* Our Services Dropdown */}
                     <li className={`dropdown ${dropdownOpen === 1 ? "active" : ""}`}>
@@ -57,20 +62,11 @@ const Navbar = () => {
                         </ul>
                     </li>
 
-                    {/* Job Seeker Dropdown */}
-                    <li className={`dropdown ${dropdownOpen === 2 ? "active" : ""}`}>
-                        <button onClick={() => toggleDropdown(2)} className="dropdownButton">
-                            Job Seeker <FiChevronDown />
-                        </button>
-                        <ul className="dropdownMenu">
-                            <li><Link href="/Jobspost" className="dropdownItem">Jobs</Link></li>
-                            <li><Link href="/work-awards" className="dropdownItem">Resume</Link></li>
-                        </ul>
-                    </li>
+                   
 
                     {/* Employment Dropdown */}
-                    <li className={`dropdown ${dropdownOpen === 3 ? "active" : ""}`}>
-                        <button onClick={() => toggleDropdown(3)} className="dropdownButton">
+                    <li className={`dropdown ${dropdownOpen === 2 ? "active" : ""}`}>
+                        <button onClick={() => toggleDropdown(2)} className="dropdownButton">
                             Employment <FiChevronDown />
                         </button>
                         <ul className="dropdownMenu">
@@ -78,9 +74,8 @@ const Navbar = () => {
                             <li><Link href='/reg' className='dropdownItem'>Register/Login</Link></li>
                         </ul>
                     </li>
-
                     <li><Link href="/Contact" className={`navLink ${pathname === '/Contact' ? 'active' : ''}`}>Contact Us</Link></li>
-                    <li><Link href="/login" className={`navLink ${pathname === '/login' ? 'active' : ''}`}>Login</Link></li>
+                    <li><Link href="/Login" className={`navLink ${pathname === '/Login' ? 'active' : ''}`}>Login</Link></li>
                 </ul>
             </nav>
         </header>
