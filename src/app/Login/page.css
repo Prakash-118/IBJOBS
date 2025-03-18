@@ -1,113 +1,135 @@
-.auth-container {
+/* styles/page.css */
+
+/* Centering the entire container */
+.containerl {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    overflow: auto;
+    padding: 20px;
 }
 
-.auth-box {
-    display: flex;
-    width: 100%;
-    max-width: 100%;
-    height: 100vh; 
+/* Styling the authentication box */
+.authBoxl {
     background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 0; 
-    overflow: hidden;
+    padding: 60px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+    margin-top: 130px;
 }
 
-.left-box, .right-box {
-    flex: 1;
-    padding: 40px;
+/* Input fields styling */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Signup form grid layout */
+.signupForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.signupForm input:nth-child(3) {
+    grid-column: span 2;
+}
+
+.signupForm select {
+    grid-column: span 2;
+}
+
+.signupForm input:nth-last-child(2), 
+.signupForm input:nth-last-child(1) {
+    grid-column: span 1;
+}
+
+/* Button styling */
+.authBoxl button {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 16px;
+}
+
+.authBoxl button:hover {
+    background: #5a67d8;
+}
+
+/* Toggle buttons styling */
+.toggleButtonsl {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.left-box {
-    background: #fff;
-    margin-bottom: 270px;
-}
-
-
-
-.login-form h2 {
-    margin-bottom: 10px;
-}
-
-.login-form p {
+    justify-content: space-between;
     margin-bottom: 20px;
-    color: #555;
-}
-.right-box p{
-    margin-bottom: 20px;
-    color: #555;
 }
 
- .login-form input, .login-form select, .login-form button {
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
- }
- .right-box input, .right-box select, .right-box button{
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
- }
- .reset-form input, .reset-form select, .reset-form button{
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
- }
- 
+.toggleButtonsl button {
+    flex: 1;
+    margin: 0 5px;
+    background: #e0e0e0;
+    color: black;
+    font-size: 16px;
+}
 
-.login-btn {
-    background: #007bff;
+.toggleButtonsl .active {
+    background: #667eea;
     color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.signup-btn{
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.reset-btn{
-    background: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.login-btn:hover {
-    background: #0056b3;
-}
-.signup-btn:hover {
-    background: #0056b3;
-}
-.reset-btn:hover {
-    background: #0056b3;
 }
 
-.forgot-password, .back-to-login {
-    color: #007bff;
-    cursor: pointer;
-    text-align: right;
+/* Login actions (login, signup, forgot password) */
+.loginActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
 }
 
-.forgot-password:hover, .back-to-login:hover {
+.loginActions p {
+    color: #667eea;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.loginActions p:hover {
     text-decoration: underline;
 }
-.loginbanner{
-    margin-top: 90px;
+.haven{
+    color: #667eea;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.haven:hover{
+    text-decoration: underline;
+}
+
+
+/* Ensure footer stays at the bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
 }
