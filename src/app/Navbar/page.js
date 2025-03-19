@@ -4,28 +4,34 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
-import './page.css';
 import Image from 'next/image';
+import './page.css';
 
 const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [dropdownOpen, setDropdownOpen] = useState(null);
+    const [dropdowns, setDropdowns] = useState({
+        services: false,
+        employment: false
+    });
     const pathname = usePathname();
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
-    const toggleDropdown = (index) => {
-        setDropdownOpen(dropdownOpen === index ? null : index);
+
+    const toggleDropdown = (dropdown) => {
+        setDropdowns((prev) => ({
+            ...prev,
+            [dropdown]: !prev[dropdown]
+        }));
     };
 
     const closeMenu = () => {
         setMenuOpen(false);
-        setDropdownOpen(null);
+        setDropdowns({ services: false, employment: false });
     };
 
     useEffect(() => {
-        closeMenu(); // Close menu on route change 
+        closeMenu();
     }, [pathname]);
-
 
     return (
         <header className="header">
@@ -39,17 +45,14 @@ const Navbar = () => {
                 <ul className="navList">
                     <li><Link href="/" className={`navLink ${pathname === '/' ? 'active' : ''}`}>Home</Link></li>
                     <li><Link href="/About" className={`navLink ${pathname === '/About' ? 'active' : ''}`}>About Us</Link></li>
-                     {/* Job Seeker Dropdown */}
-                     <li><Link href="/Jobspost" className={`navLink ${pathname === '/Jobspost' ? 'active' : ''}`}>Job Post</Link></li>
-
-
+                    <li><Link href="/Jobspost" className={`navLink ${pathname === '/Jobspost' ? 'active' : ''}`}>Job Post</Link></li>
 
                     {/* Our Services Dropdown */}
-                    <li className={`dropdown ${dropdownOpen === 1 ? "active" : ""}`}>
-                        <button onClick={() => toggleDropdown(1)} className="dropdownButton">
+                    <li className="dropdown">
+                        <button onClick={() => toggleDropdown('services')} className="dropdownButton">
                             Our Services <FiChevronDown />
                         </button>
-                        <ul className="dropdownMenu">
+                        <ul className={`dropdownMenu ${dropdowns.services ? "show" : ""}`}>
                             <li><Link href="/Services" className="dropdownItem">Permanent Staffing</Link></li>
                             <li><Link href="/Contract" className="dropdownItem">Contract Staffing</Link></li>
                             <li><Link href="/Executive" className="dropdownItem">Executive Search</Link></li>
@@ -62,18 +65,17 @@ const Navbar = () => {
                         </ul>
                     </li>
 
-                   
-
                     {/* Employment Dropdown */}
-                    <li className={`dropdown ${dropdownOpen === 2 ? "active" : ""}`}>
-                        <button onClick={() => toggleDropdown(2)} className="dropdownButton">
+                    <li className="dropdown">
+                        <button onClick={() => toggleDropdown('employment')} className="dropdownButton">
                             Employment <FiChevronDown />
                         </button>
-                        <ul className="dropdownMenu">
+                        <ul className={`dropdownMenu ${dropdowns.employment ? "show" : ""}`}>
                             <li><Link href='/jobspost' className='dropdownItem'>Jobs Post</Link></li>
                             <li><Link href='/reg' className='dropdownItem'>Register/Login</Link></li>
                         </ul>
                     </li>
+
                     <li><Link href="/Contact" className={`navLink ${pathname === '/Contact' ? 'active' : ''}`}>Contact Us</Link></li>
                     <li><Link href="/Login" className={`navLink ${pathname === '/Login' ? 'active' : ''}`}>Login</Link></li>
                 </ul>

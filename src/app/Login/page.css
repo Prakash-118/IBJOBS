@@ -1,5 +1,3 @@
-/* styles/page.css */
-
 /* Centering the entire container */
 .containerl {
     display: flex;
@@ -132,4 +130,80 @@ footer {
     padding: 10px;
     background: #333;
     color: white;
+}
+
+
+/* Success and error popup messages */
+
+.popupMessage {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 3s ease-in-out;
+}
+
+
+.popupMessage.success {
+    background: #28a745;
+}
+
+
+.popupMessage.error {
+    background: #dc3545;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .authBoxl {
+        width: 90%;
+        padding: 40px;
+        margin-top: 100px;
+    }
+    .signupForm {
+        grid-template-columns: 1fr;
+    }
+    .signupForm input, .signupForm select {
+        grid-column: span 1;
+    }
+    .toggleButtonsl {
+        flex-direction: column;
+    }
+    .toggleButtonsl button {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .authBoxl {
+        padding: 30px;
+        margin-top: 80px;
+    }
+    .containerl {
+        padding: 10px;
+    }
+    .loginActions {
+        flex-direction: column;
+        align-items: center;
+    }
+    .loginActions p {
+        margin-top: 5px;
+    }
+    .popupMessage{
+        padding: 10px 10px;
+    }
 }

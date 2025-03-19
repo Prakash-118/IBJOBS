@@ -152,3 +152,62 @@ body{
   .email-subscribe button:hover {
     background-color: darkgreen;
   }
+
+
+
+
+  @media (max-width: 1024px) {
+    .job-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .search-bar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-bar input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .job-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .search-bar {
+        padding: 15px;
+    }
+    .search-bar input {
+        width: 100%;
+    }
+    .job-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-bar {
+        padding: 10px;
+    }
+    .search-bar input {
+        padding: 10px;
+        width: 100%;
+    }
+    .search-bar button {
+        width: 100%;
+        padding: 12px;
+    }
+    .job-card {
+        padding: 10px;
+    }
+    .email-subscribe input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .email-subscribe button {
+        width: 100%;
+        margin-left: 0;
+    }
+    .popup, .email-popup {
+        width: 90%;
+    }
+}

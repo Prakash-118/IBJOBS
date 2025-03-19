@@ -275,6 +275,9 @@ ul li {
     .aboutContainer1 {
         padding: 20px;
     }
+    .aboutContainer {
+        margin-top: 90px;
+    }
 
     .textContainer h1 {
         font-size: 24px;
@@ -303,5 +306,6 @@ ul li {
 
     ul li {
         font-size: 14px;
+        list-style: none;
     }
 }
