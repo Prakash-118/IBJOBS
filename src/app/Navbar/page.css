@@ -31,7 +31,7 @@
 /* Navigation Styles */
 .nav {
   position: absolute;
-  top: 60px;
+  top: 120px;
   left: -100%;
   width: 75%;
   height: 100vh;
@@ -151,6 +151,7 @@
   }
 
   .nav {
+    top: 100%;
     position: static;
     width: auto;
     height: auto;
@@ -159,6 +160,7 @@
     align-items: center;
     padding: 0;
     flex-direction: row;
+    
   }
 
   .navList {
@@ -166,6 +168,7 @@
     flex-direction: row;
     gap: 20px;
     padding: 0;
+    
   }
 
   .navList li {
@@ -191,4 +194,12 @@
     padding: 10px 130px;
     gap: 25px; /* Adjusted gap */
   }
+}
+
+.dropdownMenu {
+  display: none;
+}
+
+.dropdownMenu.show {
+  display: block;
 }

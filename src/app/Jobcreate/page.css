@@ -1,0 +1,145 @@
+.job-post-container {
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 150px;
+    margin-bottom: 30px;
+}
+
+
+h2{
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+.progress-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.step::after{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background: black;
+    top: 20px;
+    left: 50%;
+    z-index: -1;
+}
+
+.step:last-child::after {
+    display: none;
+}
+
+.step .icon {
+    font-size: 30px;
+    color: #333;
+}
+
+.step.active .icon {
+    color: #007bff;
+}
+
+.step.completed .icon{
+    color: #007bff;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .full-width {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .row {
+    display: flex;
+    gap: 10px;
+  }
+
+
+  .row input,
+  .row select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #007bff;
+  }
+
+
+  .post-job-btn {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+  }
+.submts{
+    width: 10%;
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+.submts:hover{
+    background: #0056b3;
+}
+
+  .post-job-btn:hover {
+    background: #0056b3;
+  }
+  
+ 
+  .confirmation-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    color: #28a745;
+  }
+  
+  .confirmation-icon {
+    font-size: 24px;
+    color: #28a745;
+  }
+  

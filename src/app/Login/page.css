@@ -134,7 +134,6 @@ footer {
 
 
 /* Success and error popup messages */
-
 .popupMessage {
     position: fixed;
     top: 20px;
@@ -149,13 +148,9 @@ footer {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     animation: fadeInOut 3s ease-in-out;
 }
-
-
 .popupMessage.success {
     background: #28a745;
 }
-
-
 .popupMessage.error {
     background: #dc3545;
 }
@@ -166,6 +161,8 @@ footer {
     80% { opacity: 1; }
     100% { opacity: 0; transform: translateY(-10px); }
 }
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
