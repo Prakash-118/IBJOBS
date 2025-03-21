@@ -71,7 +71,7 @@ const Navbar = () => {
                             Employment <FiChevronDown />
                         </button>
                         <ul className={`dropdownMenu ${dropdowns.employment ? "show" : ""}`}>
-                            <li><Link href='/Jobcreate' className='dropdownItem'>Jobs Post</Link></li>
+                            <li><Link href='/Jobcreate' className='dropdownItem'>Upload Jobs</Link></li>
                             <li><Link href='/reg' className='dropdownItem'>Register/Login</Link></li>
                         </ul>
                     </li>
