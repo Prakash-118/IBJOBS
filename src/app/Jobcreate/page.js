@@ -25,12 +25,34 @@ const Page = () => {
         state: "",
         city: ""
       });
+      const stateDistricData = {
+        Bihar: ["Patna", "Gaya", "Bhagalpur", "Darbhanga", "Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhojpur", "Buxer", "Gopalganj", "Jamui", "Jehanabad", "Katihar", "Kishanganj", "Khagaria", "Lakhisarai", "Madhepura", "Madhubani", "Munger", "Muzaffarpur", "Nalanda", "Nawada", "Pachim Champaran", "Purnia", "Rohtas", "Saharsa", "Samastipur", "Saran", "Sheikhpura", "Sheohar","Sitamarhi", "Supaul", "Vaishali"],
+        Delhi: ["north", "south", "east", "west", "central", "Shahadara", "New Delhi", "North East Delhi", "North West Delhi", "South East Delhi", "South West Delhi"],
+        Gujarat: ["Ahmedabad", "Amreli", "Anand", "Aravalli", "Banaskantha", "Bharuch", "Bhavnagar", "Botad", "Chhota Udaipur", "Dahod", "Dang", "Devbhoomi Dwarka", "Gandhinagar", "Gir Somnath", "Jamnagar", "Junagadh", "Kutch", "Kheda", "Mahisagar", "Mehsana", "Morbi", "Narmada", "Navsari", "Panchmahal", "Patan", "Porbandar", "Rajkot", "Sabarkantha", "Surat", "Surendranagar", "Tapi", "Vadodara", "Valsad", "Vav-Tharad"],
+        Haryana: ["Ambala", "Bhiwani", "Charkhi Dadri", "Faridabad", "Fatehabad", "Gurugram", "Hisar", "Jhajjar", "Jind", "Kaithal", "Karnal", "Kurukshetra", "Mahendragarh", "Nuh", "Palwal", "Panchkula", "Panipat", "Rewari", "Rohtak", "Sirsa", "Sonipat", "Yamunanagar"],
+        Jharkhand: ["Bokaro", "Chatra", "Deoghar", "Dhanbad", "Dumka", "East Singhbhum", "Garhwa", "Giridih", "Godda", "Gumla", "Hazaribagh", "Jamtara", "Khunti", "Kodarma", "Latehar", "Lohardaga", "Pakur", "Palamu", "Ramgarh", "Ranchi", "Sahibganj", "Saraikela-Kharsawan", "Simdega", "West Singhbhum"],
+        Karnataka: ["bangalore", "mangalore", "mysore"],
+        Kerala: ["thiruvananthapuram", "kochi", "kollam"],
+        MadhyaPradesh: ["indore", "bhopal", "ujjain"],
+      };
+
       const [errors, setErrors] = useState({});
       const [submitted, setSubmitted] = useState(false);
+      const [selectedState, setSelectedState] = useState("");
+      const [districts, setDisricts] = useState([]);
+
+
+      const handleStateChange = (e) => {
+        const selectedState = e.target.value;
+        setSelectedState(selectedState);
+        setDisricts(stateDistricData[selectedState] || []);
+        setFormData((prev) => ({ ...prev, state: selectedState, city: "" })); 
+      };
+      
       
       const handleChange = (e) => {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        setFormData((prev) => ({ ...prev, [name]: name === "skills" ? value.split(",") : value, }));
         setErrors((prev) => ({ ...prev, [name]: "" }));
       };
       
@@ -72,7 +94,6 @@ const Page = () => {
       <form onSubmit={handleSubmit}>
         <input type="text" name="jobTitle" placeholder="Job Title" onChange={handleChange} />
         {errors.jobTitle && <p className='error-text'>{errors.jobTitle}</p>}
-
 
 
         <textarea name="description" placeholder="Description" onChange={handleChange}></textarea>
@@ -383,46 +404,20 @@ const Page = () => {
           {errors.country && <p className='error-text'>{errors.country}</p>}
 
 
-          <select name="state" onChange={handleChange}><option>Select State</option>
-            <option>Andaman And Nicobar</option>
-            <option>Andhra Pradesh</option>
-            <option>Assam</option>
-            <option>Bihar</option>
-            <option>Chandigarh</option>
-            <option>Chhatisgarh</option>
-            <option>Dadra and Nagar Haveli</option>
-            <option>Daman and Diu</option>
-            <option>Delhi</option>
-            <option>Goa</option>
-            <option>Gujrat</option>
-            <option>Haryana</option>
-            <option>Himachal Pradesh</option>
-            <option>Jammu and Kashmir</option>
-            <option>Jharkhand</option>
-            <option>Karnataka</option>
-            <option>Kerala</option>
-            <option>Ladakh</option>
-            <option>Lakshadweep</option>
-            <option>Madhya Pradesh</option>
-            <option>Maharashtra</option>
-            <option>Manipur</option>
-            <option>Meghalaya</option>
-            <option>Mizoram</option>
-            <option>Nagaland</option>
-            <option>Odisha</option>
-            <option>Punjab</option>
-            <option>Rajasthan</option>
-            <option>Sikkim</option>
-            <option>Tamil Nadu</option>
-            <option>Telangana</option>
-            <option>Tripura</option>
-            <option>Uttar Pradesh</option>
-            <option>Uttarakhand</option>
-            <option>West Bengal</option>
+          <select name="state" onChange={handleStateChange}><option>Select State</option>
+           {Object.keys(stateDistricData).map((state) =>(
+            <option key={state} value={state}>{state}</option>
+           ))}
           </select>
           {errors.state && <p className='error-text'>{errors.state}</p>}
         </div>
-        <input type="text" name="city" placeholder="City" onChange={handleChange} />
+         <select disabled={!selectedState}>
+          <option value="">Select City</option>
+          {districts.map((district) => (
+            <option key={district} value={district}>{district}</option>
+          ))}
+        </select>
+        {/* <input type="text" name="city" placeholder="City" onChange={handleChange} /> */}
         {errors.city && <p className='error-text'>{errors.city}</p>}
         
         <button type="submit" className="submts">Post Job</button>
