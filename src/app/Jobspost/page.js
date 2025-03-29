@@ -1,6 +1,6 @@
-'use client';
+"use client";
 import React, { useState, useEffect } from "react";
-import '../Jobspost/page.css';
+import "../Jobspost/page.css";
 
 const Page = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -19,20 +19,63 @@ const Page = () => {
   }, []);
 
   const jobs = [
-    { id: 1, title: "Frontend Developer", company: "Google", logo: "google.png", description: "Google job description here." },
-    { id: 2, title: "Backend Developer", company: "Amazon", logo: "amazonp.png", description: "Amazon job description here." },
-    { id: 3, title: "Full Stack Developer", company: "Facebook", logo: "facebook.png", description: "Facebook job description here." },
-    { id: 4, title: "UI/UX Designer", company: "Microsoft", logo: "microsofts.png" },
-    { id: 5, title: "Figma Designer", company: "Accenture", logo: "Accenture.png" },
-    { id: 6, title: "Full Stack Developer", company: "Facebook", logo: "facebook.png" },
-    { id: 7, title: "Frontend Developer", company: "Google", logo: "google.png" },
-    { id: 8, title: "Figma Designer", company: "Accenture", logo: "Accenture.png" },
+    {
+      id: 1,
+      title: "Frontend Developer",
+      company: "Google",
+      logo: "google.png",
+      description: "Google job description here.",
+    },
+    {
+      id: 2,
+      title: "Backend Developer",
+      company: "Amazon",
+      logo: "amazonp.png",
+      description: "Amazon job description here.",
+    },
+    {
+      id: 3,
+      title: "Full Stack Developer",
+      company: "Facebook",
+      logo: "facebook.png",
+      description: "Facebook job description here.",
+    },
+    {
+      id: 4,
+      title: "UI/UX Designer",
+      company: "Microsoft",
+      logo: "microsofts.png",
+    },
+    {
+      id: 5,
+      title: "Figma Designer",
+      company: "Accenture",
+      logo: "Accenture.png",
+    },
+    {
+      id: 6,
+      title: "Full Stack Developer",
+      company: "Facebook",
+      logo: "facebook.png",
+    },
+    {
+      id: 7,
+      title: "Frontend Developer",
+      company: "Google",
+      logo: "google.png",
+    },
+    {
+      id: 8,
+      title: "Figma Designer",
+      company: "Accenture",
+      logo: "Accenture.png",
+    },
   ];
 
   const handleSearch = () => {
     setFilteredJobs(
-      jobs.filter(
-        (job) => job.title.toLowerCase().includes(searchTerm.toLowerCase())
+      jobs.filter((job) =>
+        job.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
   };

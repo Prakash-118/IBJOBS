@@ -16,8 +16,8 @@ export default function Home() {
   const images = [
     {
       src: "/carousel.jpg",
-      heading: "Web Designing & Development",
-      description: "We design and develop websites that are user-friendly and responsive.",
+      heading: "Job Searching & Job Posting",
+      description: "We provide job searching and job posting services.",
     },
     {
       src: "/carousel2.jpg",
@@ -115,6 +115,7 @@ export default function Home() {
 
   return (
     <>
+    
       {/* Carousel Start */}
       <div className={styles.page}>
         <div className={styles.carousel}>

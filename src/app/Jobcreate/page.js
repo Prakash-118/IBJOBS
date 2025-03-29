@@ -29,7 +29,7 @@ const Page = () => {
         AndhraPradesh: ["Srikakulam", "Parvathipuram Manyam", "Vizianagaram", "Visakhapatnam", "Alluri Sitarama Raju", "Anakapalli", "Kakinada", "East Godavari", "Dr. B. R. Ambedkar konaseema", "Eluru", "West Godavari", "NTR", "Krishna", "Palnadu", "Guntur", "Bapatla", "Sri Potti Sriramulu Nellore", "Prakasam", "Kurnool", "Nandyal", "Anantapuramu", "Sri Sthya Sai", "YSR Kadapa", "Annamayya", "Tirupati", "Chittoor"],
         ArunachalPradesh: ["Tawang", "West Kameng", "Bichon", "East Kameng", "Pakke-Kessang", "Kurung Kumey", "Papum Pare", "Kra Daddi", "Lower Subansiri", "Kamle", "Keyi Panyor", "Upper Subansiri", "Shi-Yomi", "West Siang", "Siang","Lower Siang", "Lepa-Rada", "Upper Siang", "East Siang", "Dibang Valley", "Lohit", "Anjaw", "Namsai", "Changlang", "Tirap", "Longding"],
         Assam: ["Baksa", "Bajali", "Barpeta", "Biswanath", "Bongaigoan", "Cachar", "Charaideo", "Chirang", "Darrang", "Dhemaji", "Dhubri", "DibruGarh", "Dima Hasao", "Goalpara", "Golaghat", "Hailakandi", "Hojai", "Jorhat", "Kamrup Metropolitan", "Kamrup", "Karbi Anglong", "Sribhumi", "Kokrajhar", "Lakhimpur", "Majuli", "Morigaon", "Nagaon", "Nalbari", "Sivasagar", "Sonitpur", "South Salmara-Mankachar", "Tamulpur", "Tinsukia", "Udalguri", "West Karbi Anglong"],
-        Bihar: ["Patna", "Gaya", "Bhagalpur", "Darbhanga", "Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhojpur", "Buxer", "Gopalganj", "Jamui", "Jehanabad", "Katihar", "Kishanganj", "Khagaria", "Lakhisarai", "Madhepura", "Madhubani", "Munger", "Muzaffarpur", "Nalanda", "Nawada", "Pachim Champaran", "Purnia", "Rohtas", "Saharsa", "Samastipur", "Saran", "Sheikhpura", "Sheohar","Sitamarhi", "Supaul", "Vaishali"],
+        Bihar: [ "Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhojpur", "Buxer", "Bhagalpur", "Darbhanga", "Gopalganj", "Gaya", "Jamui", "Jehanabad", "Katihar", "Kishanganj", "Khagaria", "Lakhisarai", "Madhepura", "Madhubani", "Munger", "Muzaffarpur", "Nalanda", "Nawada", "Patna", "Pachim Champaran", "Purnia", "Rohtas", "Saharsa", "Samastipur", "Saran", "Sheikhpura", "Sheohar","Sitamarhi", "Supaul", "Vaishali"],
         Chandigarh: ["Chandigarh"],
         Delhi: ["north", "south", "east", "west", "central", "Shahadara", "New Delhi", "North East Delhi", "North West Delhi", "South East Delhi", "South West Delhi"],
         Goa: ["North Goa", "South Goa"],
@@ -447,7 +447,6 @@ const Page = () => {
           ))}
         </select>
         </div>
-        {/* <input type="text" name="city" placeholder="City" onChange={handleChange} /> */}
         {errors.city && <p className='error-text'>{errors.city}</p>}
         
         <button type="submit" className="submts">Post Job</button>
@@ -460,7 +459,6 @@ const Page = () => {
         </div> 
       )}
     </div>
-    
     </>
   )
 }

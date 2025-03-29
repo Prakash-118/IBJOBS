@@ -4,6 +4,7 @@ import '../Login/page.css';
 
 
 
+
 const Page = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [isEmployer, setIsEmployer] = useState(false);
@@ -17,7 +18,7 @@ const Page = () => {
 
   const showMessage = (text, type) => {
     setMessage({ text, type });
-    setTimeout(() => setMessage({ text: "", type: "" }), 3000); // Hide after 3 seconds
+    setTimeout(() => setMessage({ text: "", type: "" }), 3000); 
   };
 
   const handleSignup = () => {
@@ -90,7 +91,6 @@ const Page = () => {
                   <option>Male</option>
                   <option>Female</option>
                   <option>Other</option>
-                  <option>Trans</option>
                 </select>
               )}
               <input type="password" name="password" placeholder="Password" onChange={handleChange} />
@@ -108,6 +108,7 @@ const Page = () => {
                 <p onClick={() => setIsSignup(true)}>Sign Up</p>
                 <p onClick={() => setIsForgotPassword(true)}>Forgot Password?</p>
               </div>
+              
             </div>
           )}
         </div>
