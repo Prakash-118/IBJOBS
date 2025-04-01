@@ -1,13 +1,12 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import "../Jobspost/page.css";
+import Link from "next/link";
 
 const Page = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [location, setLocation] = useState("");
   const [filteredJobs, setFilteredJobs] = useState([]);
-  const [showPopup, setShowPopup] = useState(false);
-  const [selectedJob, setSelectedJob] = useState(null);
   const [email, setEmail] = useState("");
   const [showEmailPopup, setShowEmailPopup] = useState(false);
   const [animateSearchBar, setAnimateSearchBar] = useState(false);
@@ -24,52 +23,99 @@ const Page = () => {
       title: "Frontend Developer",
       company: "Google",
       logo: "google.png",
-      description: "Google job description here.",
     },
+    // ... rest of your job data
     {
       id: 2,
       title: "Backend Developer",
-      company: "Amazon",
-      logo: "amazonp.png",
-      description: "Amazon job description here.",
+      company: "Facebook",
+      logo: "facebook.png",
     },
     {
       id: 3,
       title: "Full Stack Developer",
-      company: "Facebook",
-      logo: "facebook.png",
-      description: "Facebook job description here.",
+      company: "Amazon",
+      logo: "amazonp.png",
     },
     {
       id: 4,
+      title: "Data Scientist",
+      company: "Accenture",
+      logo: "Accenture.png",
+    },
+    {
+      id: 5,
+      title: "Software Engineer",
+      company: "Netflix",
+      logo: "netfli.webp",
+    },
+    {
+      id: 6,
       title: "UI/UX Designer",
       company: "Microsoft",
       logo: "microsofts.png",
     },
     {
-      id: 5,
-      title: "Figma Designer",
-      company: "Accenture",
-      logo: "Accenture.png",
-    },
-    {
-      id: 6,
-      title: "Full Stack Developer",
-      company: "Facebook",
-      logo: "facebook.png",
-    },
-    {
       id: 7,
-      title: "Frontend Developer",
-      company: "Google",
-      logo: "google.png",
+      title: "DevOps Engineer",
+      company: "Apple",
+      logo: "apple.png",
     },
     {
       id: 8,
-      title: "Figma Designer",
-      company: "Accenture",
-      logo: "Accenture.png",
+      title: "Project Manager",
+      company: "IBM",
+      logo: "ibm.png",
     },
+    {
+      id: 9,
+      title: "Data Analyst",
+      company: "Tesla",
+      logo: "tesla.png",
+    },
+    {
+      id: 10,
+      title: "Cybersecurity Analyst",
+      company: "Intel",
+      logo: "intel.png",
+    },
+    {
+      id: 11,
+      title: "Cloud Engineer",
+      company: "Adobe",
+      logo: "adobe.png",
+    },
+    {
+      id: 12,
+      title: "Machine Learning Er.",
+      company: "NVIDIA",
+      logo: "nvidia.jpeg",
+    },
+    {
+      id: 13,
+      title: "Blockchain Developer",
+      company: "Orcele",
+      logo: "oracle.webp",
+    },
+    {
+      id: 14,
+      title: "Game Developer",
+      company: "Epic Games",
+      logo: "epic.png",
+    },
+    {
+      id: 15,
+      title: "Network Engineer",
+      company: "Cisco",
+      logo: "cisco.png",
+    },
+    {
+      id: 16,
+      title: "Web Developer",
+      company: "Spotify",
+      logo: "spotify.png",
+    },
+    
   ];
 
   const handleSearch = () => {
@@ -78,11 +124,6 @@ const Page = () => {
         job.title.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-  };
-
-  const handleApply = (job) => {
-    setSelectedJob(job);
-    setShowPopup(true);
   };
 
   const handleEmailSubmit = () => {
@@ -118,20 +159,12 @@ const Page = () => {
               <i className="fas fa-bookmark"></i>
               <i className="fas fa-share"></i>
             </div>
-            <button onClick={() => handleApply(job)}>Apply</button>
+            <Link href={`/Jobs/${job.id}`} passHref>
+              <button>Apply</button>
+            </Link>
           </div>
         ))}
       </div>
-
-      {/* Job Popup */}
-      {showPopup && selectedJob && (
-        <div className="popup">
-          <h2>{selectedJob.title}</h2>
-          <p>Company: {selectedJob.company}</p>
-          <p>Description: {selectedJob.description}</p>
-          <button onClick={() => setShowPopup(false)}>Close</button>
-        </div>
-      )}
 
       {/* Email Subscribe Section */}
       <div className="email-subscribe">

@@ -91,7 +91,7 @@ const Page = () => {
                   <option>Male</option>
                   <option>Female</option>
                   <option>Other</option>
-                </select>
+                </select>   
               )}
               <input type="password" name="password" placeholder="Password" onChange={handleChange} />
               <input type="password" name="confirmPassword" placeholder="Confirm Password" onChange={handleChange} />
