@@ -69,8 +69,8 @@ body{
     border-top-left-radius: 5px;
     border-bottom-right-radius: 5px;
     border: none;
-    transition: 0.3s;
 }
+
 .company-logo {
     width: 50px;
     height: 50px;
@@ -345,13 +345,26 @@ body{
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
-  
+  .responsibilities{
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .responsibilities li{
+    text-align: justify;
+    line-height: 1.5;
+  }
   .job-requirements ul {
     padding-left: 1.5rem;
   }
   
   .job-requirements li {
     margin-bottom: 0.5rem;
+  }
+  .job-description p{
+    text-align: justify;
+    line-height: 1.5;
   }
   
   .apply-button {
