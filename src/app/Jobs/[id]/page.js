@@ -13,7 +13,7 @@ const jobs = [
     requirements: ["3+ years experience", "React knowledge", "CSS skills"],
     text: "🔹 Frontend Development",
     responsibilities: ["Develop interactive and responsive web applications using React.js, Next.js, and Angular.", "Implement UI components and design systems following Google’s Material Design principles.", "Ensure seamless integration with backend services and APIs."],
-    salary: "₹120,000 - ₹150,000",
+    salary: "₹320,000 - ₹450,000",
     location: "Mountain View, CA",
   },
   // ... other job data
@@ -27,7 +27,7 @@ const jobs = [
     requirements: ["5+ years experience", "Node.js knowledge", "Daababase skills"],
     text: "🔹 Backend Development & API Design",
     responsibilities: ["Develop and maintain scalable RESTful & GraphQL APIs for Facebook’s services.", "Optimize and secure high-traffic backend systems for performance and reliability.", "Work with distributed systems, caching, and microservices architecture."],
-    salary: "₹130,000 - ₹160,000",
+    salary: "₹530,000 - ₹660,000",
     location: "Menlo Park, CA",
   },
 
@@ -42,7 +42,7 @@ const jobs = [
     requirements: ["5+ years experience", "React and Node.js Knowledge", "AWS skills"],
     text: "🔹 Frontend & Backend Development",
     responsibilities: ["Develop dynamic web applications using React.js, Angular, or Vue.js.", "Build robust server-side applications using Node.js, Python, Java, or Go.", "Implement responsive UI/UX based on Amazon’s design standards."],
-    salary: "₹140,000 - ₹170,000",
+    salary: "₹540,000 - ₹670,000",
     location: "Seattle, WA",
   },
 
@@ -57,7 +57,7 @@ const jobs = [
     requirements: ["3+ years experience", "Python knowledge", "Machine learning skills"],
     text: "🔹 Data Analysis & Machine Learning",
     responsibilities: ["Develop predictive models, AI algorithms, and data-driven strategies to solve complex business problems.", "Work with structured & unstructured data, performing data preprocessing, feature engineering, and model tuning.", "Implement machine learning, deep learning, and NLP models for various use cases."],
-    salary: "₹110,000 - ₹140,000",
+    salary: "₹310,000 - ₹350,000",
     location: "Chicago, IL",
   },
 
@@ -72,7 +72,7 @@ const jobs = [
     requirements: ["4+ years experience", "Java Knowledge", "Spring skills"],
     text: "🔹Software Development & Optimization",
     responsibilities: ["Design and develop scalable backend & frontend systems to improve streaming performance.", "Implement microservices architecture, distributed systems, and cloud-based solutions.", "Optimize application perfomance for low latency and high availability."],
-    salary: "₹125,000 - ₹155,000",
+    salary: "₹425,000 - ₹555,000",
     location: "Los Gatos, CA",
   },
 
@@ -87,7 +87,7 @@ const jobs = [
     requirements: ["3+ years experience", "Figma knowledge", "User research skills"],
     text: "🔹User Experience & Interface Design",
     responsibilities: ["Design intuitive, aesthetically pleasing user interfaces for Microsofts products.", "Develop wireframes, prototypes, and high-fidelity design using Figma, AdobeXD, or Sketch.", "Ensure Seamless interaction design through user research and usability testing."],
-    salary: "₹100,000 - ₹130,000",
+    salary: "₹300,000 - ₹430,000",
     location: "Redmond, WA",
   },
 
@@ -102,7 +102,7 @@ const jobs = [
     requirements: ["5+ years experience in DevOps, SRE or a similar role.", "AWS, Azure or Google Cloud knowledge", "CI/CD skills", "Profiency in scripting languages"],
     text: "🔹 DevOps & Cloud Infrastructure",
     responsibilities: ["Develop and maintain CI/CD pipelines to streamline software deployment.", "Automate infrastructure provisioning and configuration using taC tools like Terraform, Ansible, or CloudFormation.", "Monitor, troubleshoot, and optimize system perfmance, reliability, and security.", "Work with containerization and orchestration tools such as Docker and Kubernetes."],
-    salary: "₹130,000 - ₹160,000",
+    salary: "₹530,000 - ₹660,000",
     location: "Cupertino, CA",
   },
 
@@ -117,7 +117,7 @@ const jobs = [
     requirements: ["5+ years experience", "Agile knowledge", "Leadership skills", "Problem-Solving", "Communication and Organization"],
     text: "🔹Project Managing",
     responsibilities: ["Guide project teams through all phases, from initiation to closure, ensuring alignment with client objectives and contractual agreements.", "Monitor and control project scope, budget, and timelines, applying techniques for planning, tracking, change control, and risk management.", "Oversee all project resources, including internal team members and subcontractors, to ensure optimal performance and resource utilization.", "Develop and maintain effective communication plans, providing regular updates to clients and stakeholders, and ensuring transparency throughout the project lifecycle."],
-    salary: "₹120,000 - ₹150,000",
+    salary: "₹520,000 - ₹650,000",
     location: "Armonk, NY",
   },
 
@@ -132,7 +132,7 @@ const jobs = [
     requirements: ["3+ years experince", "Strong knowledge of SQL, Python, R", "Data visualization skills", "Problem-solving and communication skills"],
     text: "🔹Data Analyst Role ",
     responsibilities: ["Collect, clean, and analyze large datasets from various sources.", "Develop dashboard and reports to visualize key metrics.", "Identify trends, patterns, and insights to support business decisions.", "Collaborate with engineering, finance, and operations teams to improve efficiency.", "Use statistical models and machine learning techniques to forecast trends.", "Automate data processes and optimize data managment systems.", "Ensure data accuracy, integrity, and security."],
-    salary: "₹110,000 - ₹140,000",
+    salary: "₹310,000 - ₹440,000",
     location: "Palo Alto, CA",
   },
 
@@ -147,7 +147,7 @@ const jobs = [
     requirements: ["4+ years experience", "Network security knowledge", "Risk assessment skills, threat detection skills", "Experience with security tools (SIEM, firewalls, IDS/IPS, endpoint protection).", "Certifications like CISSP, CEH, CISM, or Security+ are preferred."],
     text:"🔹What You have to do",
     responsibilities: ["Monitor networks and systems for security breaches and suspicious activity.", "Investigate security incidents and recommend mitigation strategies.", "Conduct vulnerbility assesments and penetration testing.", "Implement security controls and best practices to protect data and infrastructure.", "Collaborate with IT and engineering teams to enhance security protocols.", "Research emerging threats and stay updated on cybersecurity trends.", "Ensure compliance with security policies, standards, and regulations."],
-    salary: "₹120,000 - ₹150,000",
+    salary: "₹420,000 - ₹550,000",
     location: "Santa Clara, CA",
   },
 
@@ -158,11 +158,11 @@ const jobs = [
     title: "Cloud Engineer",
     company: "Adobe",
     logo: "/adobe.png",
-    description: "Adobe job description here.",
-    requirements: ["3+ years experience", "AWS knowledge", "Cloud architecture skills"],
-    text: "",
-    responsibilities: [""],
-    salary: "₹115,000 - ₹145,000",
+    description: "Adobe is seeking a skilled Cloud Engineer to join our dynamic team and help design, build, and optimize cloud-based infrastructure and services. As a Cloud Engineer, you will work with cutting-edge cloud technologies to develop scalable, secure, and high-performance solution that power Adobes product and services.",
+    requirements: ["3+ years experience", "AWS, Azure, or Google Cloud knowledge", "Cloud architecture skills", "Proficiency in Terraform, Kubernetes, Docker, or Ansible", "Experience with monitoring tools"],
+    text: "🔹You have to do",
+    responsibilities: ["Design, implement, and maintain cloud infrastructure on AWS, Azure, or Google Cloud.", "Develop automation scripts for provisioning, scaling, and monitoring cloud resources.", "Work closely with DevOps, Security, and Software Engineering teams to ensure high availability and security of cloud-based applications.", "Optimize cloud costs and perfomance by implementing best practices in cloud architecture.", "Implement CI/CD pipelines to enhance deployment efficiency"],
+    salary: "₹415,000 - ₹525,000",
     location: "San Jose, CA",
   },
 
@@ -173,11 +173,11 @@ const jobs = [
     title: "Machine Learning Er.",
     company: "NVIDIA",
     logo: "/nvidia.jpeg",
-    description: "NVIDIA job description here.",
-    requirements: ["5+ years experience", "Python Knowledge", "Deep learning skills"],
-    text: "",
-    responsibilities: [""],
-    salary: "₹130,000 - ₹160,000",
+    description: "NVIDIA is seeking a talented Machine Learning Engineer to develop and optimize cutting-edge AI models and deep learning frameworks. In this role, you will work with a world-class team to advance the capabilities of AI in areas such as computer vision, natural language processing, and autonomous systems. Your contributions will help power the future of AI across various industries, from gaming and healthcare to self-driving cars.",
+    requirements: ["5+ years experience", "Strong programming skills in Python, C++, or CUDA", "Deep learning framework such as TensorFlow, PyTorch, or JAX", "Experience with GPU acceleration and parallel computing"],
+    text: "🔹What you'll have to do",
+    responsibilities: ["Design, develop, and optimize machine learning models for real-world applications.", "Implement and fine-tune deep learning architectures using frameworks like TensorFlow, PyTorch, or JAX.", "Work with large-scale dataset and develop efficient data pipelines for training and inference.", "Optimized AI workload for GPU acceleration and high-performance computing(HPC).", "Improve model efficiency through quantization, pruning, and model compression techniques."],
+    salary: "₹630,000 - ₹760,000",
     location: "Santa Clara, CA",
   },
 
@@ -192,9 +192,45 @@ const jobs = [
     requirements: ["4+ years experience", "Solidity knowledge", "Cryptography skills"],
     text: "🔹 Blockchain Development & Implementation",
     responsibilities:["Design, develop, and deploy smart contracts on Hyperledger Fabric or Ethereum-based platforms.", "Work with Oracle Blockchain Platform to create secure and scalable blockchain solutions.", "Collaborate with cross-functional teams to gather requirements and deliver blockchain solutions that meet business needs.", "Conduct code reviews and ensure best practices in blockchain development.", "Optimize blockchain networks for performance, scalability, and security.", "Stay updated with the latest trends and advancements in blockchain technology."],
-    salary: "₹140,000 - ₹170,000",
+    salary: "₹540,000 - ₹670,000",
     location: "Redwood city, CA",
   },
+  {
+    id: 14,
+    title: "Game Developer",
+    company: "Epic Games",
+    logo: "/epic.png",
+    description: "Epic Games is looking for a passionate and skilled Game Developer to help create immersive and cutting-edge gaming experiences using Unreal Engine. As a part of our development team, you will work on gameplay mechanics, AI, graphics, and performance optimization to bring world-class games to life. Whether it's working on Fortnite, Unreal Engine advancements, or new IPs, you will have the opportunity to shape the future of gaming.",
+    requirements: ["2+ years of experience", "Strong programming skills in C++ and Blueprints", "Experienceworking wth Unreal Engine 4 or 5", "Understanding of game physics, AI, animations, and rendering techniques", "Knowledge of multiplayer networking and game optimization techniques", "Experience with shader programming and 3D math is a plus"],
+    text: "🔹What you have to do",
+    responsibilities: ["Design, develop and implement gameplay mechanics, Ai behaviors, and physics interactions.", "Collaborate with designers, artists, and other engineers to create immersive gaming experiences.", "Optimize game performance for PC, console, and mobile platforms.", "Implement multiplayer networking and real-time game interactions.", "Debug and fix game-related issues to improve stability and performance."],
+    salary: "₹300000 - 450,000",
+    location: "Alpha, Noida",
+  },
+  {
+    id: 15,
+    title: "Network Engineer",
+    company: "Cisco",
+    logo: "/cisco.png",
+    description: "Cisco is seeking a skilled Network Engineer to design, implement, and maintain secure and scalable network infrastructures. In this role, you will work with cutting-edge networking technologies to support enterprise, cloud, and data center environments. You'll collaborate with cross-functional teams to optimize network performance, troubleshoot issues, and enhance cybersecurity measures to ensure seamless connectivity for Cisco's global clients.",
+    requirements: ["5+ years experience", "CCNA/CCNP certification", "Experience with firewalls, VPNs, IDS/IPS, and network security best practices", "Scripting knowledge in Python or Bash for network automation", "Familiarity with cloud networking (AWS, Azure, Google Cloud) and hybrid environments"],
+    text: "🔹What you have to do",
+    responsibilities: ["Design, implement, and manage network infrastructure for large-scale enterprise environments.", "Implement and maintain Cisco routers, switches, firewalls, and wireless systems.", "Trubleshoot network performance issues, outages, and security threats.", "Optimize with Cisco SD-WAN, SDN, and automation tools to streamline network operations.", "Ensure network security compliance by implementing firewall policies, VPNs, and access controls.", "Monitor and analyze network traffic using tools like Cisco Prime, SolarWinds, and Wireshark."],
+    salary: "₹560,000 - ₹980,000",
+    location: "Bangalore",
+  }, 
+  {
+    id: 16,
+    title: "Web Developer",
+    company: "Spotify",
+    logo: "/spotify.png",
+    description: "Spotify is looking for for a talented Web Developer to build and optimize engaging, high-perfomance web applications that enhance the Spotify experience for millions of users worldwide. You'll work with a dynamic team of designers, engineers, and product managers to develop responsive, interactive, and scalable web applications that power Spotify's music, podcast, and content platforms.",
+    requirements: ["2+ years experience in web development", "Strong proficiency in JavaScript (ES6+), HTML5, and CSS3", "Hands-on experience with React.js, Next.js, or Vue.js", "Familiarity with Node.js, Express, or backend technologies", "Experience working with API integrations (REST, GraphQL, WebSockets)"],
+    text: "🔹What you have to do",
+    responsibilities: ["Develop and maintain modern, user-friendly web application using JavaScript, React.js, and Node.js.", "Optimize web performance for fast loading times and seamless user experiences.", "Collaborate with UX/UI designers to bring creative ideas to life.", "Implement RESTful APIs and GraphQL to integrate with backed services.", "Ensure cross0-browser compatibility and mobile-first design principles.", "Write clean, maintainable, and well-documented code following best practices.", "Troubleshoot and debug frontend and backend issues to improve platform sstability.", "Stay updated on the latest web development trends, tools, and technologies"],
+    salary: "₹320,000 - ₹450,000",
+    location: "Stockholm",
+  }
   
 ];
 
@@ -245,7 +281,6 @@ export default function JobDetail({ params }) {
             ))}
           </ul>
         </section>
-
         <button className="apply-button">Apply Now</button>
       </div>
     </div>
