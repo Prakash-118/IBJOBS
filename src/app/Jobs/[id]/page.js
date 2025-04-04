@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import '../../Jobspost/page.css';
-import { text } from "@fortawesome/fontawesome-svg-core";
 // Mock data - in a real app you'd fetch this from an API or database
 const jobs = [
   {
@@ -17,7 +16,6 @@ const jobs = [
     location: "Mountain View, CA",
   },
   // ... other job data
-
   {
     id: 2,
     title: "Backend Developer",
@@ -30,9 +28,6 @@ const jobs = [
     salary: "₹530,000 - ₹660,000",
     location: "Menlo Park, CA",
   },
-
-
-
   {
     id: 3,
     title: "Full Stack Developer",
@@ -45,9 +40,6 @@ const jobs = [
     salary: "₹540,000 - ₹670,000",
     location: "Seattle, WA",
   },
-
-
-
   {
     id: 4,
     title: "Data Svientist",
@@ -60,9 +52,6 @@ const jobs = [
     salary: "₹310,000 - ₹350,000",
     location: "Chicago, IL",
   },
-
-
-
   {
     id: 5,
     title: "Software Engineer",
@@ -75,9 +64,6 @@ const jobs = [
     salary: "₹425,000 - ₹555,000",
     location: "Los Gatos, CA",
   },
-
-
-
   {
     id: 6,
     title: "UI/UX Designer",
@@ -90,9 +76,6 @@ const jobs = [
     salary: "₹300,000 - ₹430,000",
     location: "Redmond, WA",
   },
-
-
-
   {
     id: 7,
     title: "DevOps Engineer",
@@ -105,9 +88,6 @@ const jobs = [
     salary: "₹530,000 - ₹660,000",
     location: "Cupertino, CA",
   },
-
-
-
   {
     id: 8,
     title: "Project Manager",
@@ -120,9 +100,6 @@ const jobs = [
     salary: "₹520,000 - ₹650,000",
     location: "Armonk, NY",
   },
-
-
-
   {
     id: 9,
     title: "Data Analyst",
@@ -135,9 +112,6 @@ const jobs = [
     salary: "₹310,000 - ₹440,000",
     location: "Palo Alto, CA",
   },
-
-
-
   {
     id: 10,
     title: "Cybersecurity Analyst",
@@ -150,9 +124,6 @@ const jobs = [
     salary: "₹420,000 - ₹550,000",
     location: "Santa Clara, CA",
   },
-
-
-
   {
     id: 11,
     title: "Cloud Engineer",
@@ -165,9 +136,6 @@ const jobs = [
     salary: "₹415,000 - ₹525,000",
     location: "San Jose, CA",
   },
-
-
-
   {
     id: 12,
     title: "Machine Learning Er.",
@@ -180,9 +148,6 @@ const jobs = [
     salary: "₹630,000 - ₹760,000",
     location: "Santa Clara, CA",
   },
-
-
-
   {
     id: 13,
     title: "Blockchain Developer",
@@ -237,9 +202,9 @@ const jobs = [
 export default function JobDetail({ params }) {
   const job = jobs.find((job) => job.id === Number(params.id));
 
-  if (!job) {
-    return <div>Job not found</div>;
-  }
+  // if (!job) {
+  //   return <div>Job not found</div>;
+  // }
 
   return (
     <div className="job-detail-container">
