@@ -15,12 +15,13 @@ const jobs = [
     salary: "₹320,000 - ₹450,000",
     location: "Mountain View, CA",
   },
-  // ... other job data
   {
     id: 2,
     title: "Backend Developer",
     company: "Facebook",
     logo: "/facebook.png",
+    
+    cover: "/trantorinc.jpg",
     description: "Meta (formerly Facebook) is looking for a Backend Developer to build and maintain high-performance, scalable backend systems for Facebook’s applications. You will work with a team of engineers to develop robust APIs, optimize databases, and enhance the overall efficiency of Meta’s backend infrastructure.",
     requirements: ["5+ years experience", "Node.js knowledge", "Daababase skills"],
     text: "🔹 Backend Development & API Design",
@@ -196,7 +197,6 @@ const jobs = [
     salary: "₹320,000 - ₹450,000",
     location: "Stockholm",
   }
-  
 ];
 
 export default function JobDetail({ params }) {
@@ -207,6 +207,10 @@ export default function JobDetail({ params }) {
   // }
 
   return (
+    <>
+    <div className="covers">
+      <img src={job.cover} alt={job.img} className="cover-img"/>
+    </div>
     <div className="job-detail-container">
       <Link href="/Jobspost" className="back-button">
         &larr; Back to Jobs
@@ -221,6 +225,7 @@ export default function JobDetail({ params }) {
           <p className="job-salary">{job.salary}</p>
         </div>
       </div>
+     
 
       <div className="job-content">
         
@@ -246,8 +251,14 @@ export default function JobDetail({ params }) {
             ))}
           </ul>
         </section>
+        <section className="attension">
+          <h3>Beware of imposters!⚠️</h3>
+          <p><strong>IB JOBS</strong> does not promise a job or an interview in exchange of money. Fraudsters may ask you to pay in the pretext of registration fee, Refundable Fee.</p>
+          <p>We value the trust you place on <strong>IB JOBS </strong>are commited to making your job search a safe and fraud-free experience on our site. However, in the wake of an increasing number of instances of fake job offers, we suggest you to be cautious of fraudulent emails and calls.</p>
+        </section>
         <button className="apply-button">Apply Now</button>
       </div>
     </div>
+    </>
   );
 }

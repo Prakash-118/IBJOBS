@@ -101,6 +101,9 @@ const Page = () => {
         </div>
       </div>
 
+<h1>
+  <a href="/Profile" className="e">HERE</a>
+</h1>
       {/* Values Section */}
       <div ref={valuesRef} className={`valuesContainer ${valuesVisible ? "animate" : ""}`}>
         <div className="valuesText">
