@@ -72,6 +72,11 @@
   gap: 30px;
 }
 .quickLinks {
+  position: sticky;
+  top: 20px;
+  height: calc(100vh - 40px); 
+  overflow-y: auto; 
+  padding-right: 10px;
   width: 200px;
   background-color: #f8f9fa;
   padding: 50px;
@@ -103,6 +108,7 @@
 }
 .profileContent {
   flex: 1;
+  padding-top: 20px;
 }
 .section {
   background-color: #fff;
@@ -137,6 +143,34 @@
 .uploadButton:hover{
   background-color: #3b5998;
 }
+.editsButton{
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.editsButton:hover{
+  background-color: #3b5998;
+}
+.deleteButton{
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 8px;
+}
+.deleteButton:hover{
+  background-color: #c0392b;
+  }
+  .employmentEditDelete{
+    margin-top: 10px;
+  }
 .skillsList {
   display: flex;
   flex-wrap: wrap;
