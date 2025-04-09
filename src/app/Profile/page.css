@@ -1,7 +1,7 @@
 .profileContainer {
   max-width: 1200px;
   margin-top: 120px;
-  padding: 20px;
+  padding: 50px;
   color: #333;
 }
 .profileHeader {
@@ -23,7 +23,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid goldenrod;
+  border: 3px solid rgb(250, 89, 140);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 

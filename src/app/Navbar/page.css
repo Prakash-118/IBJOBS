@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  
 }
 
 /* Active Page Underline */
@@ -72,7 +73,7 @@
 }
 
 .navLink:hover {
-  color: #5B65F5;
+  color: #5b65f5;
 }
 
 /* Dropdown Styles */
@@ -93,7 +94,7 @@
 }
 
 .dropdownButton:hover {
-  color: #5B65F5;
+  color: #5b65f5;
 }
 
 .logo {
@@ -147,7 +148,6 @@
 @media (min-width: 768px) {
   .menuButton {
     display: none;
-    
   }
 
   .nav {
@@ -160,7 +160,6 @@
     align-items: center;
     padding: 0;
     flex-direction: row;
-    
   }
 
   .navList {
@@ -168,7 +167,6 @@
     flex-direction: row;
     gap: 20px;
     padding: 0;
-    
   }
 
   .navList li {
@@ -182,7 +180,6 @@
     width: 200px;
   }
 }
-
 
 /* Adjust dropdown positions */
 @media (min-width: 1024px) {
