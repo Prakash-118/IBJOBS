@@ -1,11 +1,10 @@
 'use client';
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import '../Login/page.css';
 
-
-
-
 const Page = () => {
+  const router = useRouter();
   const [isSignup, setIsSignup] = useState(false);
   const [isEmployer, setIsEmployer] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
@@ -23,36 +22,31 @@ const Page = () => {
 
   const handleSignup = () => {
     localStorage.setItem("user", JSON.stringify(formData));
-    setIsSignup(false);
+    localStorage.setItem("isLoggedIn", "true");
     showMessage("Signup Successful!", "success");
+    // router.push("/Profile"); // Redirect to profile after signup
   };
 
   const handleLogin = () => {
     const savedUser = JSON.parse(localStorage.getItem("user"));
     if (savedUser?.email === formData.email && savedUser?.password === formData.password) {
+      localStorage.setItem("isLoggedIn", "true");
       showMessage("Login Successful!", "success");
+      router.push("/Profile", showMessage); // Redirect to profile after login
     } else {
       showMessage("Invalid Credentials", "error");
     }
-    if (savedUser?.email === formData.email && savedUser?.password === formData.password){
-        console.log("Login Successful")
-    } else{
-        console.log("Invalid Credentials")
-    }
-    
   };
 
   const handleResetPassword = () => {
     showMessage("Password Reset Successful!", "success");
     setIsForgotPassword(false);
-    
   };
 
-
-
+  // Rest of your JSX remains exactly the same
   return (
     <>
-      <div className="containerl">
+       <div className="containerl">
         <div className="authBoxl">
           {isForgotPassword ? (
             <div>

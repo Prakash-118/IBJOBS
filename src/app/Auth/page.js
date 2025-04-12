@@ -14,7 +14,7 @@ const Auth = (WrappedComponent) => {
             }
         }, [router]);
 
-        return <WrappedComponent {...props} />;
+        return <WrappedComponent {...props} />
     };
 
     AuthComponent.displayName = `Auth(${WrappedComponent.displayName || WrappedComponent.name || "Component"})`;

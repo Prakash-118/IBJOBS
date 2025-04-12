@@ -414,6 +414,7 @@ const Page = () => {
             />
             <label htmlFor="profilePhotoInput" className="photoEditLabel">
               Edit
+              
             </label>
           </div>
 
@@ -469,7 +470,7 @@ const Page = () => {
               <h3>Resume</h3>
               <div className="uploadSection">
                 <button
-                  className="uploadButton"
+                  className="uploadButton"  
                   onClick={() => fileInputRef.current.click()}
                 >
                   Update resume
@@ -477,10 +478,10 @@ const Page = () => {
                 <input
                   type="file"
                   ref={fileInputRef}
-                  style={{ display: "none" }}
+                  // style={{ display: "none" }}
                   accept=".doc,.docx,.rtf,.pdf"
                 />
-                <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p>
+                <p style={{color:"gray"}}>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p>
               </div>
             </div>
 

@@ -1,0 +1,783 @@
+/* Base Styles */
+.employer-profile {
+    min-height: 100vh;
+    margin-top: 100px;
+  }
+  
+  .dark-mode {
+    background-color: #111827;
+    color: white;
+  }
+  
+  .loading-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  /* Header Styles */
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-title {
+    font-size: 1.875rem;
+    font-weight: bold;
+  }
+  
+  .mode-toggle {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #e5e7eb;
+    color: #111827;
+    border: none;
+  }
+  
+  .dark-mode-toggle {
+    background-color: #374151;
+    color: white;
+  }
+  
+  .mode-toggle:hover {
+    opacity: 0.9;
+  }
+  
+  /* Profile Completion Meter */
+  .completion-meter {
+    margin-bottom: 2rem;
+  }
+  
+  .meter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .meter-title {
+    font-weight: 500;
+  }
+  
+  .meter-percentage {
+    font-weight: bold;
+  }
+  
+  .meter-bar {
+    width: 100%;
+    height: 1rem;
+    border-radius: 0.5rem;
+    background-color: #e5e7eb;
+    overflow: hidden;
+  }
+  
+  .dark-meter-bar {
+    background-color: #374151;
+  }
+  
+  .meter-progress {
+    height: 100%;
+    border-radius: 0.5rem;
+  }
+  
+  .low-progress {
+    background-color: #ef4444;
+  }
+  
+  .medium-progress {
+    background-color: #f59e0b;
+  }
+  
+  .high-progress {
+    background-color: #10b981;
+  }
+  
+  .meter-hint {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .dark-mode .meter-hint {
+    color: #9ca3af;
+  }
+  
+  /* Profile Card */
+  .profile-card {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: white;
+  }
+  
+  .dark-profile-card {
+    background-color: #1f2937;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .profile-header-section {
+    padding: 1.5rem;
+    background-color: #2563eb;
+  }
+  
+  .dark-profile-header {
+    background-color: #1e40af;
+  }
+  
+  .profile-header-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .avatar-container {
+    margin-bottom: 1rem;
+  }
+  
+  .avatar-image {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 9999px;
+    object-fit: cover;
+  }
+  
+  .avatar-fallback {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 9999px;
+    background-color: white;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .profile-info {
+    flex: 1;
+  }
+  
+  .name-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 0.5rem;
+  }
+  
+  .verified-badge {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .verified-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 0.25rem;
+    fill: currentColor;
+  }
+  
+  .company-name {
+    color: #93c5fd;
+  }
+  
+  .social-links {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+  
+  .social-link:hover {
+    opacity: 1;
+  }
+  
+  .social-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    fill: currentColor;
+  }
+  
+  /* Profile Content */
+  .profile-content {
+    padding: 1.5rem;
+  }
+  
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    border-bottom: 1px solid rgb(234, 229, 229);
+  }
+  
+  @media (min-width: 768px) {
+    .profile-header-content {
+      flex-direction: row;
+    }
+    
+    .avatar-container {
+      margin-bottom: 0;
+      margin-right: 1.5rem;
+    }
+    
+    .profile-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .profile-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .info-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .company-info {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .company-logo-container {
+    flex-shrink: 0;
+  }
+  
+  .company-logo {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    object-fit: cover;
+  }
+  
+  .company-logo-fallback {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .company-name-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .company-name-value {
+    font-weight: 500;
+    margin-right: 0.5rem;
+  }
+  
+  .company-verified-badge {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+  
+  .dark-info-label {
+    color: #9ca3af;
+  }
+  
+  .info-value {
+    color: #111827;
+  }
+  
+  .dark-mode .info-value {
+    color: #f3f4f6;
+  }
+  
+  .website-link {
+    color: #2563eb;
+    text-decoration: none;
+  }
+  
+  .dark-website-link {
+    color: #93c5fd;
+  }
+  
+  .website-link:hover {
+    text-decoration: underline;
+  }
+  
+  .verified-icon-small {
+    margin-left: 0.5rem;
+    color: #10b981;
+  }
+  
+  .verified-icon-small svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+  }
+  
+  /* Stats Container */
+  .stats-container {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dark-stats-container {
+    background-color: #374151;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .stat-card {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .dark-stat-card {
+    background-color: #4b5563;
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+  
+  .dark-stat-label {
+    color: #d1d5db;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+  }
+  
+  .dark-mode .stat-value {
+    color: white;
+  }
+  
+  /* Actions Container */
+  .actions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .action-button {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .action-buttons {
+    width: 10%;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .primary-action {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .primary-action:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .success-action {
+    background-color: #10b981;
+    color: white;
+  }
+  
+  .success-action:hover {
+    background-color: #059669;
+  }
+  
+  .secondary-action {
+    background-color: #e5e7eb;
+    color: #111827;
+  }
+  
+  .dark-secondary-action {
+    background-color: #4b5563;
+    color: white;
+  }
+  
+  .secondary-action:hover {
+    background-color: #d1d5db;
+  }
+  
+  .dark-secondary-action:hover {
+    background-color: #6b7280;
+  }
+  
+  .tertiary-action {
+    background-color: #8b5cf6;
+    color: white;
+  }
+  
+  .tertiary-action:hover {
+    background-color: #7c3aed;
+  }
+  
+  /* Jobs Section */
+  .jobs-section {
+    margin-top: 5rem;
+  }
+  
+  .jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .job-card {
+    padding: 1rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: box-shadow 0.2s;
+    background-color: white;
+  }
+  
+  .dark-job-card {
+    border-color: #374151;
+    background-color: #1f2937;
+  }
+  
+  .job-card:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark-job-card:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+  
+  .job-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+  }
+  
+  .job-meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+  
+  .dark-job-meta {
+    color: #9ca3af;
+  }
+  
+  .job-description {
+    margin-bottom: 0.5rem;
+  }
+  
+  .dark-text {
+    color: #f3f4f6;
+  }
+  
+  .job-status {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+  }
+  
+  .active-status {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .dark-mode .active-status {
+    background-color: #166534;
+    color: #dcfce7;
+  }
+  
+  .closed-status {
+    background-color: #fef3c7;
+    color: #92400e;
+  }
+  
+  .dark-mode .closed-status {
+    background-color: #92400e;
+    color: #fef3c7;
+  }
+  
+  .draft-status {
+    background-color: #e5e7eb;
+    color: #374151;
+  }
+  
+  .dark-mode .draft-status {
+    background-color: #374151;
+    color: #e5e7eb;
+  }
+  
+  .job-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .job-stat {
+    font-size: 0.875rem;
+    color: #6b7280;
+  }
+  
+  .dark-job-stat {
+    color: #9ca3af;
+  }
+  
+  .job-stat .stat-label {
+    font-weight: 500;
+    margin-right: 0.25rem;
+  }
+  
+  .job-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .job-action-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .small-action-button {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+    background-color: #e5e7eb;
+    color: #111827;
+  }
+  
+  .dark-small-action-button {
+    background-color: #4b5563;
+    color: white;
+  }
+  
+  .small-action-button:hover {
+    background-color: #d1d5db;
+  }
+  
+  .dark-small-action-button:hover {
+    background-color: #6b7280;
+  }
+  
+  .primary-small-action {
+    background-color: #2563eb;
+    color: white;
+  }
+  
+  .primary-small-action:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Analytics Dashboard */
+  .analytics-section {
+    margin-top: 3rem;
+  }
+  
+  .analytics-container {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+  }
+  
+  .dark-analytics-container {
+    background-color: #374151;
+  }
+  
+  .analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .analytics-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  .analytics-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: white;
+  }
+  
+  .dark-analytics-card {
+    background-color: #4b5563;
+  }
+  
+  .analytics-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-container {
+    height: 10rem;
+  }
+  
+  .chart-placeholder {
+    height: 80%;
+    background-color: #e5e7eb;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0.5rem;
+    gap: 0.5rem;
+  }
+  
+  .dark-chart-placeholder {
+    background-color: #374151;
+  }
+  
+  .full-chart-placeholder {
+    height: 100%;
+    background-color: #e5e7eb;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dark-full-chart-placeholder {
+    background-color: #374151;
+  }
+  
+  .chart-bar {
+    flex: 1;
+    background-color: #2563eb;
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+  
+  .chart-bar-secondary {
+    flex: 1;
+    background-color: #10b981;
+    border-radius: 0.25rem 0.25rem 0 0;
+  }
+  
+  .chart-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+  }
+  
+  .chart-label {
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .dark-chart-label {
+    color: #9ca3af;
+  }
+  
+  .chart-hint {
+    color: #6b7280;
+    text-align: center;
+  }
+  
+  .dark-chart-hint {
+    color: #9ca3af;
+  }
+  
+  /* Utility Classes */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }

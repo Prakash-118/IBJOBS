@@ -213,6 +213,10 @@
   font-size: 14px;
   border-radius: 6px;
 }
+.skillInputContainer .addButton{
+  height: 30px;
+  margin-top: 8px;
+}
 .employmentItem {
   margin-bottom: 20px;
   padding-bottom: 20px;
