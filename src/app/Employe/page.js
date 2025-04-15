@@ -81,8 +81,30 @@ export default function EmployerProfile() {
             applicants: 32,
             views: 210,
           },
+          {
+            id: 104,
+            title: "DevOps Engineer",
+            type: "Contract",
+            location: "Remote",
+            status: "closed",
+            postedDate: "2025-05-04",
+            description: "Experienced DevOps engineer required for a 3-month project...",
+            applicants: 15,
+            views: 75,
+          },
+          {
+            id: 105,
+            title: "Frontend Developer",
+            type: "Full-time",
+            location: "On-site",
+            status: "active",
+            postedDate: "2025-09-12",
+            description: "React developer needed for a new project...",
+            applicants: 28,
+            views: 180,
+          },
         ],
-        profileCompletion: 90,
+        profileCompletion: 100,
         emailVerified: true,
       };
       setEmployerData(mockData);
@@ -478,6 +500,7 @@ export default function EmployerProfile() {
               {/* Middle Column - Company Info */}
               <div className="profile-column">
                 <h2 className="section-title">Company Information</h2>
+                
                 <div className="info-section">
                   <div className="info-item company-info">
                     <div className="company-logo-container">

@@ -882,3 +882,250 @@
 .dark-chart-hint {
   color: #f0f0f0;
 }
+
+
+
+/* Edit Profile Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.edit-modal {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.dark-modal {
+  background-color: #2d3748;
+  color: #f7fafc;
+}
+
+.edit-modal h2 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #2d3748;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 10px;
+}
+
+.dark-modal h2 {
+  color: #f7fafc;
+  border-bottom-color: #4a5568;
+}
+
+.edit-section {
+  margin-bottom: 25px;
+}
+
+.edit-section h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #4a5568;
+}
+
+.dark-modal .edit-section h3 {
+  color: #cbd5e0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4a5568;
+}
+
+.dark-modal .form-group label {
+  color: #cbd5e0;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.dark-modal .form-group input,
+.dark-modal .form-group textarea {
+  background-color: #4a5568;
+  border-color: #4a5568;
+  color: #f7fafc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.upload-preview {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e2e8f0;
+}
+
+.dark-modal .upload-preview {
+  border-color: #4a5568;
+}
+
+.upload-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #3182ce;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.company-logo-fallback {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background-color: #38a169;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.upload-button {
+  padding: 8px 16px;
+  background-color: #edf2f7;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.dark-modal .upload-button {
+  background-color: #4a5568;
+  border-color: #4a5568;
+  color: #f7fafc;
+}
+
+.upload-button:hover {
+  background-color: #e2e8f0;
+}
+
+.dark-modal .upload-button:hover {
+  background-color: #2d3748;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dark-modal .modal-actions {
+  border-top-color: #4a5568;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  background-color: #e53e3e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cancel-button:hover {
+  background-color: #c53030;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #3182ce;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.save-button:hover {
+  background-color: #2b6cb0;
+}
+
+/* Animation for modal */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .edit-modal {
+    width: 95%;
+    padding: 20px;
+  }
+  
+  .image-upload-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-button,
+  .save-button {
+    width: 100%;
+  }
+}
